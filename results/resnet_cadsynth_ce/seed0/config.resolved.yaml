@@ -1,0 +1,26 @@
+# Written by runners/run_all.py -- the exact config of one run.
+# base: configs/resnet_cadsynth_ce.yaml   cell: resnet_cadsynth_ce   seed: 0
+experiment_name: resnet_cadsynth_ce
+seed: 0
+dataset:
+  name: cadsynth_faces
+  json_dir: ../data/cadsynth_faces/
+  n_classes: 25
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+model:
+  type: resnet_encoder
+  embedding_dim: 512
+loss:
+  type: cross_entropy
+  use_class_weights: false
+training:
+  max_epochs: 60
+  batch_size: 128
+  lr: 0.0003
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  patience: 10
+  scheduler: cosine_annealing
+paths:
+  checkpoint: results/resnet_cadsynth_ce/seed0/checkpoint.pth
+  figures: results/resnet_cadsynth_ce/seed0/

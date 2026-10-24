@@ -1,0 +1,79 @@
+# cadsynth_bias_shuffled_weighted -- TIER T6, the weighted mirror of cadsynth_bias_shuffled.
+#
+# T6 answers Q5: does the topology gain survive the OTHER class-weighting
+# policy? The headline table (T1) is unweighted per decision 2; this arm reruns
+# the same cell with inverse-frequency weighting so the paper can state in one
+# sentence and a compact table whether the adjacency-vs-shuffled ordering is a
+# property of the bias or an artefact of the weighting.
+#
+# IT DIFFERS FROM configs/cadsynth_bias_shuffled.yaml IN EXACTLY THREE THINGS:
+#   experiment_name, loss.use_class_weights, paths
+# Nothing else may ever differ, or the comparison conflates the weighting with
+# whatever else changed. A test in tests/test_seeding.py enforces this.
+#
+# T6 IS IN P2 and is quotable, clearly labelled as the weighted mirror -- it is
+# not part of the headline table.
+#
+# Run:
+#   python runners/run_all.py --tier T6 --seeds 0 1 2 3 4
+
+experiment_name: cadsynth_bias_shuffled_weighted
+seed: 42
+
+dataset:
+  name: cadsynth
+  # Real adjacency, real convexity and dihedral angle, UV-Net unit-cube coordinates.
+  json_dir: ../data/cadsynth/
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+  n_classes: 25
+
+  # scaled | raw | standardized
+  #   scaled       faces_attr      divided by constants, clipped to [0,1]
+  #   raw          faces_attr_raw  unit-cube units, unclipped
+  #   standardized (raw - mean) / std, statistics from the TRAINING SPLIT only
+  attributes: standardized
+  norm_stats: datasets/splits/cadsynth_norm_train.json
+
+  # Expands the ordinal type column into an 8-way indicator (4-d -> 11-d).
+  # Leave false until the encoder is widened to accept 11-d attributes.
+  one_hot_type: false
+
+bias:
+  type: shuffled           # similarity | adjacency | both | shuffled
+  lambda_adj: 1.0        # used only when type: both
+  lambda_sim: 1.0
+
+model:
+  type: semantic_segmentation
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+
+label_encoder:
+  embedding_dim: 128
+
+loss:
+  type: prototype_infonce
+  temperature: 0.07
+  # THE ONE SUBSTANTIVE LINE THAT DIFFERS
+  # from configs/cadsynth_bias_shuffled.yaml. true on purpose: this arm exists to run
+  # the OTHER class-weighting policy against an otherwise identical cell.
+  use_class_weights: true
+
+training:
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+
+paths:
+  checkpoint: results/checkpoints/cadsynth_bias_shuffled_weighted.pth
+  figures: results/figures/cadsynth_bias_shuffled_weighted/

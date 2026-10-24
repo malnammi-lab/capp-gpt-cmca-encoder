@@ -1,0 +1,41 @@
+# Written by runners/run_all.py -- the exact config of one run.
+# base: configs/mfinstseg_bias_similarity.yaml   cell: mfinstseg_bias_similarity   seed: 2
+experiment_name: mfinstseg_bias_similarity
+seed: 2
+dataset:
+  name: mfinstaseg
+  json_dir: ../data/mfinstaseg/
+  split_file: datasets/splits/mfinstseg_70_10_20_seed42.json
+  n_classes: 25
+  attributes: standardized
+  norm_stats: datasets/splits/mfinstseg_norm_train.json
+  one_hot_type: false
+bias:
+  type: similarity
+  lambda_adj: 1.0
+  lambda_sim: 1.0
+model:
+  type: semantic_segmentation
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+label_encoder:
+  embedding_dim: 128
+loss:
+  type: prototype_infonce
+  temperature: 0.07
+  use_class_weights: false
+training:
+  max_epochs: 60
+  batch_size: 4
+  lr: 0.0001
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+paths:
+  checkpoint: results/mfinstseg_bias_similarity/seed2/checkpoint.pth
+  figures: results/mfinstseg_bias_similarity/seed2/

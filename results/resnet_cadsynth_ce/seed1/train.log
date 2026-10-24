@@ -1,0 +1,67 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_resnet --config results/resnet_cadsynth_ce/seed1/config.resolved.yaml
+
+Classifier head sized from config: 25 classes
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Dataset split: 118165 train / 17060 val / 34338 test faces  (4244 / 1212 models)
+
+Model parameters: 11,728,217
+
+======================================================================
+RESNET BASELINE: Cross-Modal Contrastive Alignment
+======================================================================
+Epoch   1/60 | Loss 1.4754 | Acc 60.19% | LR 3.00e-04 | Val Loss 1.1717 | Val Acc 64.33%
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Epoch  10/60 | Loss 0.7845 | Acc 76.07% | LR 2.84e-04 | Val Loss 0.7876 | Val Acc 74.56%
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Epoch  20/60 | Loss 0.6380 | Acc 79.93% | LR 2.32e-04 | Val Loss 0.7270 | Val Acc 76.41%
+
+Early stopping at epoch 27 (no val-loss improvement for 10 epochs); selected epoch 17
+Selection stamped on results/resnet_cadsynth_ce/seed1/checkpoint.pth: epoch 17, stopping_reason=early_stop
+
+======================================================================
+TEST SET EVALUATION
+======================================================================
+Checkpoint loaded from results/resnet_cadsynth_ce/seed1/checkpoint.pth
+Scoring the selected checkpoint (epoch 17, stopping_reason=early_stop)
+Test Accuracy: 75.92%
+  Class  0: 95.22% (19248 samples)
+  Class  1: 27.23% (1065 samples)
+  Class  2: 24.33% (337 samples)
+  Class  3: 49.55% (1106 samples)
+  Class  4: 5.97% (737 samples)
+  Class  5: 69.66% (1572 samples)
+  Class  6: 8.72% (321 samples)
+  Class  7: 54.33% (462 samples)
+  Class  8: 36.39% (393 samples)
+  Class  9: 44.51% (510 samples)
+  Class 10: 58.38% (346 samples)
+  Class 11: 51.06% (1224 samples)
+  Class 12: 36.90% (1000 samples)
+  Class 13: 33.58% (664 samples)
+  Class 14: 71.51% (1162 samples)
+  Class 15: 83.33% (222 samples)
+  Class 16: 76.55% (145 samples)
+  Class 17: 72.54% (284 samples)
+  Class 18: 91.87% (332 samples)
+  Class 19: 71.59% (602 samples)
+  Class 20: 34.74% (642 samples)
+  Class 21: 58.56% (765 samples)
+  Class 22: 83.33% (612 samples)
+  Class 23: 45.65% (368 samples)
+  Class 24: 89.50% (219 samples)
+
+Training complete. Best checkpoint: results/resnet_cadsynth_ce/seed1/checkpoint.pth (epoch 17, stopping_reason=early_stop)

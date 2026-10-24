@@ -1,0 +1,70 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_resnet --config results/resnet_cadsynth_cmca/seed0/config.resolved.yaml
+
+Classifier head sized from config: 25 classes
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Dataset split: 118165 train / 17060 val / 34338 test faces  (4244 / 1212 models)
+
+Model parameters: 11,728,705
+
+======================================================================
+RESNET BASELINE: Cross-Modal Contrastive Alignment
+======================================================================
+Epoch   1/60 | Loss 1.4293 | Acc 60.90% | LR 3.00e-04 | Val Loss 1.1852 | Val Acc 63.46%
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Epoch  10/60 | Loss 0.7785 | Acc 76.17% | LR 2.84e-04 | Val Loss 0.8203 | Val Acc 74.14%
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Epoch  20/60 | Loss 0.6328 | Acc 79.95% | LR 2.32e-04 | Val Loss 0.7446 | Val Acc 75.82%
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Epoch  30/60 | Loss 0.5192 | Acc 83.07% | LR 1.58e-04 | Val Loss 0.7476 | Val Acc 76.54%
+
+Early stopping at epoch 37 (no val-loss improvement for 10 epochs); selected epoch 27
+Selection stamped on results/resnet_cadsynth_cmca/seed0/checkpoint.pth: epoch 27, stopping_reason=early_stop
+
+======================================================================
+TEST SET EVALUATION
+======================================================================
+Checkpoint loaded from results/resnet_cadsynth_cmca/seed0/checkpoint.pth
+Scoring the selected checkpoint (epoch 27, stopping_reason=early_stop)
+Test Accuracy: 76.72%
+  Class  0: 94.98% (19248 samples)
+  Class  1: 31.74% (1065 samples)
+  Class  2: 24.93% (337 samples)
+  Class  3: 49.10% (1106 samples)
+  Class  4: 19.54% (737 samples)
+  Class  5: 66.54% (1572 samples)
+  Class  6: 12.77% (321 samples)
+  Class  7: 59.74% (462 samples)
+  Class  8: 51.15% (393 samples)
+  Class  9: 45.49% (510 samples)
+  Class 10: 67.63% (346 samples)
+  Class 11: 50.33% (1224 samples)
+  Class 12: 56.30% (1000 samples)
+  Class 13: 33.89% (664 samples)
+  Class 14: 63.68% (1162 samples)
+  Class 15: 73.42% (222 samples)
+  Class 16: 79.31% (145 samples)
+  Class 17: 82.39% (284 samples)
+  Class 18: 87.95% (332 samples)
+  Class 19: 70.60% (602 samples)
+  Class 20: 40.19% (642 samples)
+  Class 21: 52.68% (765 samples)
+  Class 22: 77.45% (612 samples)
+  Class 23: 58.42% (368 samples)
+  Class 24: 91.78% (219 samples)
+
+Training complete. Best checkpoint: results/resnet_cadsynth_cmca/seed0/checkpoint.pth (epoch 27, stopping_reason=early_stop)

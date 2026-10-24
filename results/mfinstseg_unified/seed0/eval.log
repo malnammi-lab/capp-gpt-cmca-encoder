@@ -1,0 +1,74 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.evaluation.evaluate_unified --config results/mfinstseg_unified/seed0/config.resolved.yaml
+
+Checkpoint loaded from results/mfinstseg_unified/seed0/checkpoint.pth
+Loading 1176 feature files (attributes=standardized, bias=both) ...
+Loaded 1176 models
+  attribute dim: 4
+
+======================================================================
+UNIFIED EVALUATION -- semantic + bottom + instance
+======================================================================
+checkpoint : results/mfinstseg_unified/seed0/checkpoint.pth  (epoch 38)
+test set   : 1176 models from split file datasets/splits/mfinstseg_70_10_20_seed42.json (test partition)
+attributes : standardized   bias: both
+
+----------------------------------------------------------------------
+SEMANTIC  --  31795 faces
+----------------------------------------------------------------------
+   Class |   Accuracy |  Precision |     Recall |         F1 |    Support
+-------------------------------------------------------------------------
+       0 |     81.58% |     0.9418 |     0.8158 |     0.8743 |        456
+       1 |     95.20% |     0.9892 |     0.9520 |     0.9702 |        479
+       2 |     81.53% |     0.8826 |     0.8153 |     0.8476 |       1310
+       3 |     88.88% |     0.9355 |     0.8888 |     0.9116 |       1682
+       4 |     96.12% |     0.9024 |     0.9612 |     0.9309 |       2395
+       5 |     81.61% |     0.7583 |     0.8161 |     0.7862 |        223
+       6 |     58.78% |     0.9062 |     0.5878 |     0.7131 |        296
+       7 |     86.42% |     0.9211 |     0.8642 |     0.8917 |         81
+       8 |     80.32% |     0.8112 |     0.8032 |     0.8072 |        813
+       9 |     93.16% |     0.8688 |     0.9316 |     0.8991 |       1301
+      10 |     84.11% |     0.8456 |     0.8411 |     0.8434 |        749
+      11 |     98.61% |     0.9765 |     0.9861 |     0.9813 |       1221
+      12 |     96.03% |     0.9756 |     0.9603 |     0.9679 |        831
+      13 |     95.28% |     0.9566 |     0.9528 |     0.9547 |       1525
+      14 |     96.75% |     0.9375 |     0.9675 |     0.9523 |       2062
+      15 |     98.66% |     0.9664 |     0.9866 |     0.9764 |       2771
+      16 |     99.60% |     0.9712 |     0.9960 |     0.9834 |       1758
+      17 |     69.55% |     0.9518 |     0.6955 |     0.8037 |        312
+      18 |     92.55% |     0.9490 |     0.9255 |     0.9371 |        322
+      19 |     89.81% |     0.9571 |     0.8981 |     0.9267 |        373
+      20 |     94.76% |     0.9240 |     0.9476 |     0.9357 |        821
+      21 |     97.59% |     0.9681 |     0.9759 |     0.9720 |        747
+      22 |     93.46% |     0.9046 |     0.9346 |     0.9194 |       1208
+      23 |     92.39% |     0.9239 |     0.9239 |     0.9239 |        394
+      24 |     99.45% |     0.9941 |     0.9945 |     0.9943 |       7665
+-------------------------------------------------------------------------
+   Macro |            |     0.9248 |     0.8969 |     0.9082 |
+
+Overall accuracy: 94.42%    macro F1: 0.9082    mIoU: 0.8390
+Macro F1 is the number to compare across arms -- overall accuracy is dominated by the majority class.
+mIoU is the metric the MFInstSeg literature reports for this head. It is always <= macro F1 on the same predictions: both divide by the same errors, but F1 counts true positives twice.
+
+----------------------------------------------------------------------
+BOTTOM-FACE  --  31795 faces, 5101 positive (16.0%)
+----------------------------------------------------------------------
+Accuracy:  98.07%
+Precision: 0.9515   Recall: 0.9269   F1: 0.9390
+mIoU:      0.9312   (not-bottom 0.9773, bottom 0.8851)
+   AAGNet and SFRGNN report this head as accuracy + mIoU, so mIoU is the number to quote beside theirs -- on our own split, not theirs.
+(an always-negative predictor would score 83.96% accuracy here -- read the F1, not the accuracy)
+
+----------------------------------------------------------------------
+INSTANCE  --  930718 face pairs, 79682 positive (8.6%)
+----------------------------------------------------------------------
+ROC-AUC: 0.9975   (threshold-free)
+
+  at checkpoint threshold 0.8774   [tuned on the VALIDATION split by train_unified.py, never on test -- REPORTABLE]
+    accuracy 98.96%   P 0.9361   R 0.9428   F1 0.9394
+
+  at test-tuned threshold 0.8773   [ORACLE: has seen the test labels -- DO NOT REPORT]
+    accuracy 98.96%   P 0.9360   R 0.9430   F1 0.9395
+    oracle minus reportable F1: +0.0001   (how much a test-tuned threshold would buy over the val-tuned one -- a generalisation gap, not a leak)
+
+Metrics saved to results/mfinstseg_unified/seed0/unified_eval_metrics.json
+Figures saved to results/mfinstseg_unified/seed0

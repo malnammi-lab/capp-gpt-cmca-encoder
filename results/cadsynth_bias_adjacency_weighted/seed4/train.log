@@ -1,0 +1,131 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_semantic --config results/cadsynth_bias_adjacency_weighted/seed4/config.resolved.yaml
+
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Loading 4244 feature files (attributes=standardized, bias=adjacency) ...
+Loaded 4244 models
+  attribute dim: 4
+Dataset split: 4244 train / 606 val / 1212 test
+  attributes=standardized  bias=adjacency  attr_dim=4  train adjacency density 0.204
+
+Class counts:
+  Class  0: 65521 samples
+  Class  1:  3685 samples
+  Class  2:  1135 samples
+  Class  3:  3752 samples
+  Class  4:  2623 samples
+  Class  5:  5686 samples
+  Class  6:  1309 samples
+  Class  7:  1747 samples
+  Class  8:  1219 samples
+  Class  9:  1720 samples
+  Class 10:  1180 samples
+  Class 11:  4488 samples
+  Class 12:  3080 samples
+  Class 13:  2508 samples
+  Class 14:  4012 samples
+  Class 15:   811 samples
+  Class 16:   522 samples
+  Class 17:   985 samples
+  Class 18:  1156 samples
+  Class 19:  2059 samples
+  Class 20:  2175 samples
+  Class 21:  2898 samples
+  Class 22:  1758 samples
+  Class 23:  1262 samples
+  Class 24:   874 samples
+
+Class weights (inverse-frequency, normalised):
+  Class  0: 0.0245
+  Class  1: 0.4350
+  Class  2: 1.4122
+  Class  3: 0.4272
+  Class  4: 0.6111
+  Class  5: 0.2819
+  Class  6: 1.2245
+  Class  7: 0.9175
+  Class  8: 1.3149
+  Class  9: 0.9319
+  Class 10: 1.3583
+  Class 11: 0.3571
+  Class 12: 0.5204
+  Class 13: 0.6391
+  Class 14: 0.3995
+  Class 15: 1.9764
+  Class 16: 3.0706
+  Class 17: 1.6273
+  Class 18: 1.3865
+  Class 19: 0.7785
+  Class 20: 0.7369
+  Class 21: 0.5531
+  Class 22: 0.9117
+  Class 23: 1.2701
+  Class 24: 1.8339
+
+======================================================================
+STAGE 1: Semantic Segmentation -- Contrastive Alignment (CMCA)
+======================================================================
+Epoch   1/60 | Loss 2.1529 | Acc 36.49% | Val Loss 1.5391 | Val Acc 43.13%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   2/60 | Loss 1.4124 | Acc 52.33% | Val Loss 1.1004 | Val Acc 62.74%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   3/60 | Loss 1.0474 | Acc 60.26% | Val Loss 0.9212 | Val Acc 63.69%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   4/60 | Loss 0.8075 | Acc 65.29% | Val Loss 0.6775 | Val Acc 68.75%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   5/60 | Loss 0.6826 | Acc 69.11% | Val Loss 0.5469 | Val Acc 73.16%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   6/60 | Loss 0.6000 | Acc 71.80% | Val Loss 0.5205 | Val Acc 76.91%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   7/60 | Loss 0.5331 | Acc 74.24% | Val Loss 0.4729 | Val Acc 79.36%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   8/60 | Loss 0.4808 | Acc 75.96% | Val Loss 0.4253 | Val Acc 73.56%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch   9/60 | Loss 0.4470 | Acc 77.05% | Val Loss 0.4061 | Val Acc 81.46%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  10/60 | Loss 0.4062 | Acc 78.67% | Val Loss 0.4196 | Val Acc 79.84%
+Epoch  11/60 | Loss 0.3784 | Acc 79.60% | Val Loss 0.3930 | Val Acc 78.45%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  12/60 | Loss 0.3536 | Acc 80.46% | Val Loss 0.3474 | Val Acc 77.85%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  13/60 | Loss 0.3304 | Acc 81.62% | Val Loss 0.3455 | Val Acc 81.78%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  14/60 | Loss 0.3090 | Acc 82.33% | Val Loss 0.3121 | Val Acc 84.21%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  15/60 | Loss 0.2909 | Acc 83.02% | Val Loss 0.2981 | Val Acc 81.72%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  16/60 | Loss 0.2742 | Acc 84.03% | Val Loss 0.3182 | Val Acc 83.04%
+Epoch  17/60 | Loss 0.2622 | Acc 84.47% | Val Loss 0.2931 | Val Acc 83.82%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  18/60 | Loss 0.2461 | Acc 84.75% | Val Loss 0.2837 | Val Acc 83.32%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  19/60 | Loss 0.2300 | Acc 85.82% | Val Loss 0.2770 | Val Acc 84.65%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  20/60 | Loss 0.2217 | Acc 86.38% | Val Loss 0.2752 | Val Acc 83.11%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  21/60 | Loss 0.2080 | Acc 86.56% | Val Loss 0.2865 | Val Acc 85.72%
+Epoch  22/60 | Loss 0.2039 | Acc 87.20% | Val Loss 0.2542 | Val Acc 85.77%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  23/60 | Loss 0.1838 | Acc 87.80% | Val Loss 0.2687 | Val Acc 88.19%
+Epoch  24/60 | Loss 0.1800 | Acc 88.37% | Val Loss 0.2704 | Val Acc 89.57%
+Epoch  25/60 | Loss 0.1709 | Acc 88.68% | Val Loss 0.2919 | Val Acc 89.07%
+Epoch  26/60 | Loss 0.1658 | Acc 89.18% | Val Loss 0.2345 | Val Acc 88.54%
+Checkpoint saved to results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Epoch  27/60 | Loss 0.1572 | Acc 89.64% | Val Loss 0.2417 | Val Acc 88.24%
+Epoch  28/60 | Loss 0.1512 | Acc 89.93% | Val Loss 0.2695 | Val Acc 91.34%
+Epoch  29/60 | Loss 0.1457 | Acc 90.63% | Val Loss 0.2550 | Val Acc 89.61%
+Epoch  30/60 | Loss 0.1338 | Acc 90.67% | Val Loss 0.2737 | Val Acc 89.15%
+Epoch  31/60 | Loss 0.1302 | Acc 91.08% | Val Loss 0.2832 | Val Acc 88.97%
+Epoch  32/60 | Loss 0.1300 | Acc 91.37% | Val Loss 0.2579 | Val Acc 90.08%
+Epoch  33/60 | Loss 0.1218 | Acc 91.72% | Val Loss 0.2495 | Val Acc 89.34%
+Epoch  34/60 | Loss 0.1161 | Acc 92.04% | Val Loss 0.2819 | Val Acc 92.25%
+Epoch  35/60 | Loss 0.1123 | Acc 92.30% | Val Loss 0.2783 | Val Acc 91.21%
+Epoch  36/60 | Loss 0.1038 | Acc 92.53% | Val Loss 0.2674 | Val Acc 91.50%
+
+Early stopping at epoch 36 (no val-loss improvement for 10 epochs); selected epoch 26
+Selection stamped on results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth: epoch 26, stopping_reason=early_stop
+Checkpoint loaded from results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth
+Scoring the selected checkpoint (epoch 26, stopping_reason=early_stop)
+
+Test Accuracy: 87.91% (30188/34338 faces)
+Training complete. Best checkpoint: results/cadsynth_bias_adjacency_weighted/seed4/checkpoint.pth

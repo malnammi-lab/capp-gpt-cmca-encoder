@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors and operating-system metadata
+.vscode/
+.idea/
+*.ini
+!pytest.ini
+Thumbs.db
+.DS_Store
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+
+# Raw corpora live outside this repository.
+data/
+
+# Checkpoints are regenerated locally; reported metrics remain tracked.
+*.pth
+*.pt
+*.ckpt
+
+# Development-only runs that do not support a paper number.
+results/smoke/
+results/DO-NOT-CITE-pre-decision-B/
+

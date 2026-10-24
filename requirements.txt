@@ -1,0 +1,20 @@
+# pip fallback for the model environment (see env-model.yml, which is the
+# authoritative record). Extraction has its own environment: env-extraction.yml.
+#
+# This list was derived by reading the imports in src/ and runners/, not copied
+# from a template. scipy, seaborn and tqdm were previously listed here and are
+# imported by nothing in this codebase; they have been removed. (scipy is still
+# INSTALLED on the run machine -- scikit-learn requires it -- it is just not a
+# direct dependency of this code. It appears in env-lock-studio.txt.)
+#
+# VERSION FLOORS ONLY -- this file is not a reproducibility artifact.
+#   env-lock-studio.txt  the complete `pip freeze` of the run machine. Install
+#                        from this if you need the exact environment.
+#   env-model.yml        the direct dependencies, pinned, with the machine spec.
+
+torch>=2.6.0            # floor implied by the checkpoint format (.storage_alignment)
+torchvision>=0.15.0     # ResNet-18 baseline only (src/models/resnet_encoder.py)
+numpy>=1.24.0
+scikit-learn>=1.2.0     # roc_curve, roc_auc_score, confusion_matrix
+matplotlib>=3.7.0       # confusion matrices, ROC curves, training curves
+pyyaml>=6.0             # config loading

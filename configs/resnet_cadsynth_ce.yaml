@@ -1,0 +1,57 @@
+# ResNet-18 on CADSynth -- CROSS-ENTROPY arm of the 2x2 ablation (task 2.1).
+#
+# Generated from resnet_cadsynth.yaml; only `loss.type` differs, so the two are
+# identical in corpus, split, seed, tower and every hyper-parameter. Same UV
+# tower (UVGridEncoder) with a linear class head instead of a label tower.
+#
+# Run:
+#   python -m src.training.train_resnet --config configs/resnet_cadsynth_ce.yaml
+
+experiment_name: resnet_cadsynth_ce
+seed: 42
+
+dataset:
+  name: cadsynth_faces
+  # A different VIEW of the same parts -- see resnet_cadsynth.yaml for the full
+  # note. Same 6,062 models, same 169,563 faces, same split file as the graph
+  # arms, so every cell of the 2x2 ablation is measured on the same held-out
+  # parts.
+  json_dir: ../data/cadsynth_faces/
+  n_classes: 25
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+  # NO `norm_stats` HERE, DELIBERATELY. Every other config in configs/ carries
+  # one, so its absence looks like an oversight; it is not. norm_stats is read
+  # only by CMCADataset when attributes="standardized" (src/data/brep_dataset.py).
+  # The ResNet cells load UVGridLabelDataset (src/data/uv_dataset.py), which
+  # performs no standardisation of any kind -- the UV grids are already in unit
+  # -cube coordinates. Adding norm_stats here would be silently ignored.
+  # train_split and val_split are unset. The split file supplies train, val, and test.
+
+model:
+  type: resnet_encoder
+  embedding_dim: 512
+
+loss:
+  type: cross_entropy          # prototype_infonce | cross_entropy
+  # temperature is unused by the CE arm -- there is no contrastive term
+  # One shared policy across every approach:
+  # unweighted, matching the eight bias arms and resnet_cadsynth.yaml. The
+  # weighted variant is the tier-T4 footnote, not the headline.
+  use_class_weights: false
+
+training:
+  # Same selection rule as resnet_cadsynth.yaml and the
+  # graph arms. See the batch-size note there.
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 128
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  patience: 10
+  scheduler: cosine_annealing
+
+paths:
+  checkpoint: results/checkpoints/resnet_cadsynth_ce.pth
+  figures: results/figures/resnet_cadsynth_ce/

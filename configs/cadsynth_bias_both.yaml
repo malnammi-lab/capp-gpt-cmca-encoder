@@ -1,0 +1,68 @@
+# CADSynth semantic CMCA -- re-extracted corpus, BOTH bias.
+#
+# One of three arms. The only line that differs between them is `bias.type`:
+#
+#   configs/cadsynth_bias_similarity.yaml   type: similarity   (reproduces the old behaviour)
+#   configs/cadsynth_bias_adjacency.yaml    type: adjacency    (real face-adjacency graph)
+#   configs/cadsynth_bias_both.yaml         type: both         (adjacency + similarity)
+#
+# Run:
+#   python -m src.training.train_semantic --config configs/cadsynth_bias_adjacency.yaml
+
+experiment_name: cadsynth_bias_both
+seed: 42
+
+dataset:
+  name: cadsynth
+  # Real adjacency, real convexity and dihedral angle, UV-Net unit-cube coordinates.
+  json_dir: ../data/cadsynth/
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+  n_classes: 25
+
+  # scaled | raw | standardized
+  #   scaled       faces_attr      divided by constants, clipped to [0,1]
+  #   raw          faces_attr_raw  unit-cube units, unclipped
+  #   standardized (raw - mean) / std, statistics from the TRAINING SPLIT only
+  attributes: standardized
+  norm_stats: datasets/splits/cadsynth_norm_train.json
+
+  # Expands the ordinal type column into an 8-way indicator (4-d -> 11-d).
+  # Leave false until the encoder is widened to accept 11-d attributes.
+  one_hot_type: false
+
+bias:
+  type: both        # similarity | adjacency | both
+  lambda_adj: 1.0        # used only when type: both
+  lambda_sim: 1.0
+
+model:
+  type: semantic_segmentation
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+
+label_encoder:
+  embedding_dim: 128
+
+loss:
+  type: prototype_infonce
+  temperature: 0.07
+  use_class_weights: false
+
+training:
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+
+paths:
+  checkpoint: results/checkpoints/cadsynth_bias_both.pth
+  figures: results/figures/cadsynth_bias_both/

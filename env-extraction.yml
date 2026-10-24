@@ -1,0 +1,46 @@
+# Environment 1 of 2 -- B-Rep feature extraction (src/cmca/extract/).
+#
+# WHY TWO ENVIRONMENTS. pythonocc-core 7.9.0 is built for Python 3.10 and is not
+# available for 3.13, which is what the training environment runs. The two cannot
+# be merged. Extraction is a one-off batch job that writes JSON; training reads
+# that JSON and never imports OCC. They are cleanly separated, so keeping two
+# environments costs nothing and avoids pinning torch to an old Python.
+#
+# This file reproduces exactly the environment that produced both v2 corpora
+# (see datasets/MANIFEST.md for their checksums). Taken verbatim from cell 1 of
+#   reference/.../New trail 261/New version of feature extraction.ipynb
+#
+# CREATE
+#   conda env create -f env-extraction.yml
+#   conda activate pyoccenv
+#
+# VERIFY BEFORE USE -- both extractors ship a self-test on a box and a blind-hole
+# part with known answers. It caught a pythonocc 7.9 binding change and a
+# defaulting bug before either reached real data. Run it after every rebuild:
+#   python src/cmca/extract/extract_features_cadsynth.py   --self-test
+#   python src/cmca/extract/extract_features_mfinstaseg.py --self-test
+#
+# ON COLAB the runtime has no conda, so bootstrap miniconda first:
+#   !wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#   !bash Miniconda3-latest-Linux-x86_64.sh -b -u -p /usr/local/miniconda
+#   import os; os.environ["PATH"] = "/usr/local/miniconda/bin:" + os.environ["PATH"]
+#   !conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+#   !conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+#   !conda env create -f env-extraction.yml
+# then run scripts through it, because the notebook kernel is a different Python:
+#   !conda run --no-capture-output -n pyoccenv python -u <script>.py ...
+#
+# DEPENDENCY SET is deliberately minimal: the extractors import only numpy and
+# OCC.* (verified -- OCC is imported lazily inside _load_occ(), so a missing
+# install fails with a readable message instead of an ImportError at import time).
+# Nothing else is needed; do not add torch here.
+
+name: pyoccenv
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - pythonocc-core=7.9.0
+  - numpy

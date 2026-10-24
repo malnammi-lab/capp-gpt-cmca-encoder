@@ -1,0 +1,41 @@
+# Written by runners/run_all.py -- the exact config of one run.
+# base: configs/cadsynth_bias_adjacency.yaml   cell: cadsynth_bias_adjacency   seed: 4
+experiment_name: cadsynth_bias_adjacency
+seed: 4
+dataset:
+  name: cadsynth
+  json_dir: ../data/cadsynth/
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+  n_classes: 25
+  attributes: standardized
+  norm_stats: datasets/splits/cadsynth_norm_train.json
+  one_hot_type: false
+bias:
+  type: adjacency
+  lambda_adj: 1.0
+  lambda_sim: 1.0
+model:
+  type: semantic_segmentation
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+label_encoder:
+  embedding_dim: 128
+loss:
+  type: prototype_infonce
+  temperature: 0.07
+  use_class_weights: false
+training:
+  max_epochs: 60
+  batch_size: 4
+  lr: 0.0001
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+paths:
+  checkpoint: results/cadsynth_bias_adjacency/seed4/checkpoint.pth
+  figures: results/cadsynth_bias_adjacency/seed4/

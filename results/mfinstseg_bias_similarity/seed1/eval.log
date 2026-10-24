@@ -1,0 +1,51 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.evaluation.evaluate_semantic --config results/mfinstseg_bias_similarity/seed1/config.resolved.yaml
+
+Checkpoint loaded from results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Loading 1176 feature files (attributes=standardized, bias=similarity) ...
+Loaded 1176 models
+  attribute dim: 4
+
+Split file: datasets/splits/mfinstseg_70_10_20_seed42.json
+Evaluating on test split (1176 models) -- attributes=standardized, bias=similarity
+
+======================================================================
+SEMANTIC SEGMENTATION EVALUATION
+======================================================================
+
+Overall Accuracy: 90.77%  (31795 samples)
+
+   Class |   Accuracy |  Precision |     Recall |         F1 |    Support
+-------------------------------------------------------------------------
+       0 |     79.82% |     0.8966 |     0.7982 |     0.8445 |        456
+       1 |     88.10% |     0.9724 |     0.8810 |     0.9244 |        479
+       2 |     70.84% |     0.8897 |     0.7084 |     0.7888 |       1310
+       3 |     81.21% |     0.8026 |     0.8121 |     0.8073 |       1682
+       4 |     96.70% |     0.8562 |     0.9670 |     0.9082 |       2395
+       5 |     72.65% |     0.8394 |     0.7265 |     0.7788 |        223
+       6 |     63.18% |     0.6825 |     0.6318 |     0.6561 |        296
+       7 |     86.42% |     0.9091 |     0.8642 |     0.8861 |         81
+       8 |     65.19% |     0.7703 |     0.6519 |     0.7062 |        813
+       9 |     88.47% |     0.8713 |     0.8847 |     0.8780 |       1301
+      10 |     81.17% |     0.8183 |     0.8117 |     0.8150 |        749
+      11 |     97.30% |     0.9399 |     0.9730 |     0.9561 |       1221
+      12 |     90.25% |     0.9352 |     0.9025 |     0.9186 |        831
+      13 |     92.92% |     0.9255 |     0.9292 |     0.9274 |       1525
+      14 |     88.65% |     0.8336 |     0.8865 |     0.8592 |       2062
+      15 |     98.09% |     0.9587 |     0.9809 |     0.9697 |       2771
+      16 |     96.99% |     0.8983 |     0.9699 |     0.9327 |       1758
+      17 |     43.59% |     0.7816 |     0.4359 |     0.5597 |        312
+      18 |     79.19% |     0.8979 |     0.7919 |     0.8416 |        322
+      19 |     85.79% |     0.9143 |     0.8579 |     0.8852 |        373
+      20 |     91.84% |     0.8881 |     0.9184 |     0.9030 |        821
+      21 |     97.86% |     0.9568 |     0.9786 |     0.9676 |        747
+      22 |     83.94% |     0.8278 |     0.8394 |     0.8335 |       1208
+      23 |     91.62% |     0.9256 |     0.9162 |     0.9209 |        394
+      24 |     98.89% |     0.9908 |     0.9889 |     0.9899 |       7665
+-------------------------------------------------------------------------
+   Macro |            |     0.8793 |     0.8443 |     0.8583 |
+
+mIoU: 0.7641   (macro F1 0.8583)
+mIoU is always <= macro F1 on the same predictions; both divide by the same errors, but F1 counts true positives twice.
+
+Confusion matrix saved to results/mfinstseg_bias_similarity/seed1/confusion_matrix.png
+Metrics saved to results/mfinstseg_bias_similarity/seed1/eval_metrics.json

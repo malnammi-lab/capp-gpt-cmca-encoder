@@ -1,0 +1,51 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.evaluation.evaluate_semantic --config results/resnet_cadsynth_cmca/seed2/config.resolved.yaml
+
+Checkpoint loaded from results/resnet_cadsynth_cmca/seed2/checkpoint.pth
+Loading 1212 feature files...
+Total faces loaded: 34338
+
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Evaluating on test split (34338 models) -- attributes=scaled, bias=similarity
+
+======================================================================
+SEMANTIC SEGMENTATION EVALUATION
+======================================================================
+
+Overall Accuracy: 76.59%  (34338 samples)
+
+   Class |   Accuracy |  Precision |     Recall |         F1 |    Support
+-------------------------------------------------------------------------
+       0 |     95.73% |     0.8944 |     0.9573 |     0.9248 |      19248
+       1 |     27.14% |     0.5236 |     0.2714 |     0.3575 |       1065
+       2 |     21.36% |     0.3978 |     0.2136 |     0.2780 |        337
+       3 |     50.99% |     0.5306 |     0.5099 |     0.5201 |       1106
+       4 |     16.15% |     0.4132 |     0.1615 |     0.2322 |        737
+       5 |     72.71% |     0.5399 |     0.7271 |     0.6197 |       1572
+       6 |      6.54% |     0.3443 |     0.0654 |     0.1099 |        321
+       7 |     56.93% |     0.6145 |     0.5693 |     0.5910 |        462
+       8 |     40.46% |     0.7833 |     0.4046 |     0.5336 |        393
+       9 |     42.75% |     0.4325 |     0.4275 |     0.4300 |        510
+      10 |     59.83% |     0.8086 |     0.5983 |     0.6877 |        346
+      11 |     39.38% |     0.4141 |     0.3938 |     0.4037 |       1224
+      12 |     50.30% |     0.4483 |     0.5030 |     0.4741 |       1000
+      13 |     34.49% |     0.6562 |     0.3449 |     0.4521 |        664
+      14 |     67.21% |     0.4842 |     0.6721 |     0.5629 |       1162
+      15 |     84.23% |     0.8348 |     0.8423 |     0.8386 |        222
+      16 |     73.10% |     0.9298 |     0.7310 |     0.8185 |        145
+      17 |     77.11% |     0.8939 |     0.7711 |     0.8280 |        284
+      18 |     89.46% |     0.9055 |     0.8946 |     0.9000 |        332
+      19 |     71.59% |     0.8603 |     0.7159 |     0.7815 |        602
+      20 |     44.08% |     0.5360 |     0.4408 |     0.4838 |        642
+      21 |     57.91% |     0.6836 |     0.5791 |     0.6270 |        765
+      22 |     86.60% |     0.7561 |     0.8660 |     0.8073 |        612
+      23 |     36.96% |     0.4084 |     0.3696 |     0.3880 |        368
+      24 |     87.67% |     0.9057 |     0.8767 |     0.8910 |        219
+-------------------------------------------------------------------------
+   Macro |            |     0.6400 |     0.5563 |     0.5816 |
+
+mIoU: 0.4454   (macro F1 0.5816)
+mIoU is always <= macro F1 on the same predictions; both divide by the same errors, but F1 counts true positives twice.
+
+Confusion matrix saved to results/resnet_cadsynth_cmca/seed2/confusion_matrix.png
+Metrics saved to results/resnet_cadsynth_cmca/seed2/eval_metrics.json

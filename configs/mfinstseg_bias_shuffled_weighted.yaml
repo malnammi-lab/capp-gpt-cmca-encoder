@@ -1,0 +1,76 @@
+# mfinstseg_bias_shuffled_weighted -- TIER T7, P3 SCOUTING. NOT FOR P2.
+#
+# The weighted mirror of mfinstseg_bias_shuffled, run to inform P3's design (Q6-Q8), not to
+# produce a number for this paper. Its outputs land under results/scouting/ so
+# that a path alone tells a reader the number is outside P2 quotability:
+# training-regiment.md section 2 excludes T7 from the release claim, and the
+# quotability checklist in section 4 says T7 never appears in P2.
+#
+# IT DIFFERS FROM configs/mfinstseg_bias_shuffled.yaml IN EXACTLY THREE THINGS:
+#   experiment_name, loss.use_class_weights, paths
+# Nothing else may ever differ, or the mirror conflates the weighting with
+# whatever else changed.
+#
+# Run:
+#   python runners/run_all.py --tier T7 --seeds 0 1 2 3 4
+
+experiment_name: mfinstseg_bias_shuffled_weighted
+seed: 42
+
+dataset:
+  name: mfinstaseg
+  # Real adjacency, real convexity and dihedral angle, UV-Net unit-cube coordinates.
+  json_dir: ../data/mfinstaseg/
+  split_file: datasets/splits/mfinstseg_70_10_20_seed42.json
+  n_classes: 25
+
+  # scaled | raw | standardized
+  #   scaled       faces_attr      divided by constants, clipped to [0,1]
+  #   raw          faces_attr_raw  unit-cube units, unclipped
+  #   standardized (raw - mean) / std, statistics from the TRAINING SPLIT only
+  attributes: standardized
+  norm_stats: datasets/splits/mfinstseg_norm_train.json
+
+  # Expands the ordinal type column into an 8-way indicator (4-d -> 11-d).
+  # Leave false until the encoder is widened to accept 11-d attributes.
+  one_hot_type: false
+
+bias:
+  type: shuffled           # similarity | adjacency | both | shuffled
+  lambda_adj: 1.0        # used only when type: both
+  lambda_sim: 1.0
+
+model:
+  type: semantic_segmentation
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+
+label_encoder:
+  embedding_dim: 128
+
+loss:
+  type: prototype_infonce
+  temperature: 0.07
+  # THE ONE SUBSTANTIVE LINE THAT DIFFERS
+  # from configs/mfinstseg_bias_shuffled.yaml. true on purpose: this arm exists to run
+  # the OTHER class-weighting policy against an otherwise identical cell.
+  use_class_weights: true
+
+training:
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+
+paths:
+  checkpoint: results/scouting/checkpoints/mfinstseg_bias_shuffled_weighted.pth
+  figures: results/scouting/figures/mfinstseg_bias_shuffled_weighted/

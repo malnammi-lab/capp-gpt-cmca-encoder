@@ -1,0 +1,51 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.evaluation.evaluate_semantic --config results/cadsynth_bias_both/seed3/config.resolved.yaml
+
+Checkpoint loaded from results/cadsynth_bias_both/seed3/checkpoint.pth
+Loading 1212 feature files (attributes=standardized, bias=both) ...
+Loaded 1212 models
+  attribute dim: 4
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Evaluating on test split (1212 models) -- attributes=standardized, bias=both
+
+======================================================================
+SEMANTIC SEGMENTATION EVALUATION
+======================================================================
+
+Overall Accuracy: 95.81%  (34338 samples)
+
+   Class |   Accuracy |  Precision |     Recall |         F1 |    Support
+-------------------------------------------------------------------------
+       0 |     97.95% |     0.9788 |     0.9795 |     0.9791 |      19248
+       1 |     82.82% |     0.8197 |     0.8282 |     0.8239 |       1065
+       2 |     88.43% |     0.8011 |     0.8843 |     0.8406 |        337
+       3 |     88.70% |     0.9497 |     0.8870 |     0.9173 |       1106
+       4 |     93.89% |     0.9010 |     0.9389 |     0.9196 |        737
+       5 |     96.76% |     0.9645 |     0.9676 |     0.9660 |       1572
+       6 |     49.53% |     0.5179 |     0.4953 |     0.5064 |        321
+       7 |     84.85% |     0.8634 |     0.8485 |     0.8559 |        462
+       8 |     75.06% |     0.7825 |     0.7506 |     0.7662 |        393
+       9 |     97.65% |     0.8542 |     0.9765 |     0.9113 |        510
+      10 |     91.33% |     0.9634 |     0.9133 |     0.9377 |        346
+      11 |     95.83% |     0.9654 |     0.9583 |     0.9619 |       1224
+      12 |     96.60% |     0.9847 |     0.9660 |     0.9753 |       1000
+      13 |     99.25% |     0.9821 |     0.9925 |     0.9873 |        664
+      14 |     99.40% |     0.9796 |     0.9940 |     0.9868 |       1162
+      15 |     79.73% |     0.9672 |     0.7973 |     0.8741 |        222
+      16 |     92.41% |     0.8933 |     0.9241 |     0.9085 |        145
+      17 |     96.83% |     0.9892 |     0.9683 |     0.9786 |        284
+      18 |     98.80% |     0.9619 |     0.9880 |     0.9747 |        332
+      19 |     97.34% |     0.9932 |     0.9734 |     0.9832 |        602
+      20 |     96.11% |     0.9904 |     0.9611 |     0.9755 |        642
+      21 |     99.87% |     0.9961 |     0.9987 |     0.9974 |        765
+      22 |    100.00% |     0.9792 |     1.0000 |     0.9895 |        612
+      23 |     95.92% |     0.9619 |     0.9592 |     0.9605 |        368
+      24 |     97.26% |     0.9181 |     0.9726 |     0.9446 |        219
+-------------------------------------------------------------------------
+   Macro |            |     0.9183 |     0.9169 |     0.9169 |
+
+mIoU: 0.8601   (macro F1 0.9169)
+mIoU is always <= macro F1 on the same predictions; both divide by the same errors, but F1 counts true positives twice.
+
+Confusion matrix saved to results/cadsynth_bias_both/seed3/confusion_matrix.png
+Metrics saved to results/cadsynth_bias_both/seed3/eval_metrics.json

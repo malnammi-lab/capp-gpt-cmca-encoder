@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper."
+type: software
+
+title: "capp-gpt-cmca-encoder: Cross-Modal Contrastive Alignment of B-Rep Graphs with Manufacturing Feature Prototypes"
+
+abstract: >-
+  Reference implementation of the CMCA Part Encoder for CAPP-GPT. Encodes a
+  CAD boundary representation as a face graph: per-face UV grids through a CNN,
+  per-face and per-edge attributes, and a Graph Transformer whose attention bias
+  compares attribute similarity, real shared-edge face adjacency, their sum, and
+  a shuffled-adjacency control. Faces are classified by cosine similarity to
+  learned manufacturing-feature prototypes under a prototype InfoNCE objective,
+  rather than by a fixed classification head. Extending the label tower while
+  leaving the geometry tower unchanged is an architectural affordance; unseen
+  classes are not evaluated. The repository contains the STEP-to-features
+  extractors, the encoder, every paper experiment configuration, the saved data
+  splits, and the scripts that regenerate the reported tables.
+
+authors:
+  - family-names: Mohamed
+    given-names: Hassan
+    affiliation: "Department of Information and Computer Science, Interdisciplinary Research Center for Intelligent Secure Systems, King Fahd University of Petroleum and Minerals, Saudi Arabia"
+  - family-names: Alnammi
+    given-names: Moayad
+    affiliation: "Department of Information and Computer Science, Interdisciplinary Research Center for Intelligent Secure Systems, King Fahd University of Petroleum and Minerals, Saudi Arabia"
+  - family-names: Azab
+    given-names: Ahmed
+    affiliation: "Production & Operations Analytics Research Lab, Faculty of Engineering, University of Windsor, 401 Sunset Ave, Windsor, ON, N9B 3P4, Canada"
+
+license: MIT
+repository-code: "https://github.com/malnammi-lab/capp-gpt-cmca-encoder"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23602506
+    description: Extracted B-Rep face graphs and UV grids for CADSynth and MFInstSeg
+
+keywords:
+  - computer-aided process planning
+  - boundary representation
+  - graph transformer
+  - contrastive learning
+  - manufacturing feature recognition
+  - CAD

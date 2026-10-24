@@ -1,0 +1,90 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_unified --config results/mfinstseg_unified/seed1/config.resolved.yaml
+
+
+Split file: datasets/splits/mfinstseg_70_10_20_seed42.json
+Loading 4116 feature files (attributes=standardized, bias=both) ...
+Loaded 4116 models
+  attribute dim: 4
+Dataset split: 4116 train / 588 val / 1176 test
+  attributes=standardized  bias=both  attr_dim=4  train adjacency density 0.214
+
+======================================================================
+UNIFIED TRAINING: Semantic + Bottom + Instance Contrastive
+======================================================================
+Epoch   1/60 | Loss 4.0662 | Val 2.8622 | Sem 44.07% | Bot 87.55% | InstAUC 0.981 | Thresh 0.891
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   2/60 | Loss 2.7036 | Val 2.1039 | Sem 58.80% | Bot 91.07% | InstAUC 0.988 | Thresh 0.890
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   3/60 | Loss 2.1090 | Val 1.7575 | Sem 68.11% | Bot 92.80% | InstAUC 0.991 | Thresh 0.902
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   4/60 | Loss 1.7095 | Val 1.3901 | Sem 75.04% | Bot 93.93% | InstAUC 0.993 | Thresh 0.890
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   5/60 | Loss 1.4671 | Val 1.2201 | Sem 78.32% | Bot 94.55% | InstAUC 0.995 | Thresh 0.894
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   6/60 | Loss 1.2995 | Val 1.1791 | Sem 80.45% | Bot 94.82% | InstAUC 0.994 | Thresh 0.892
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   7/60 | Loss 1.1771 | Val 1.0410 | Sem 82.36% | Bot 95.01% | InstAUC 0.995 | Thresh 0.894
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   8/60 | Loss 1.0679 | Val 0.9396 | Sem 84.21% | Bot 95.25% | InstAUC 0.996 | Thresh 0.884
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch   9/60 | Loss 0.9747 | Val 0.8908 | Sem 85.77% | Bot 95.33% | InstAUC 0.996 | Thresh 0.897
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  10/60 | Loss 0.8936 | Val 0.8392 | Sem 87.10% | Bot 95.44% | InstAUC 0.996 | Thresh 0.882
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  11/60 | Loss 0.8247 | Val 0.7754 | Sem 88.34% | Bot 95.73% | InstAUC 0.997 | Thresh 0.879
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  12/60 | Loss 0.7646 | Val 0.7293 | Sem 89.03% | Bot 95.79% | InstAUC 0.997 | Thresh 0.892
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  13/60 | Loss 0.7163 | Val 0.7011 | Sem 89.95% | Bot 95.91% | InstAUC 0.997 | Thresh 0.886
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  14/60 | Loss 0.6672 | Val 0.6643 | Sem 90.67% | Bot 96.04% | InstAUC 0.997 | Thresh 0.878
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  15/60 | Loss 0.6352 | Val 0.6791 | Sem 91.21% | Bot 96.13% | InstAUC 0.997 | Thresh 0.876
+Epoch  16/60 | Loss 0.5915 | Val 0.6482 | Sem 91.83% | Bot 96.22% | InstAUC 0.997 | Thresh 0.888
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  17/60 | Loss 0.5597 | Val 0.6146 | Sem 92.16% | Bot 96.36% | InstAUC 0.997 | Thresh 0.877
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  18/60 | Loss 0.5215 | Val 0.6138 | Sem 92.68% | Bot 96.48% | InstAUC 0.997 | Thresh 0.896
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  19/60 | Loss 0.5015 | Val 0.5901 | Sem 92.92% | Bot 96.53% | InstAUC 0.997 | Thresh 0.875
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  20/60 | Loss 0.4789 | Val 0.5539 | Sem 93.24% | Bot 96.68% | InstAUC 0.998 | Thresh 0.879
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  21/60 | Loss 0.4578 | Val 0.5358 | Sem 93.60% | Bot 96.76% | InstAUC 0.998 | Thresh 0.871
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  22/60 | Loss 0.4454 | Val 0.5744 | Sem 93.75% | Bot 96.84% | InstAUC 0.997 | Thresh 0.879
+Epoch  23/60 | Loss 0.4213 | Val 0.5673 | Sem 94.10% | Bot 96.89% | InstAUC 0.997 | Thresh 0.874
+Epoch  24/60 | Loss 0.3977 | Val 0.5115 | Sem 94.33% | Bot 97.04% | InstAUC 0.998 | Thresh 0.888
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  25/60 | Loss 0.3899 | Val 0.5361 | Sem 94.44% | Bot 97.15% | InstAUC 0.998 | Thresh 0.890
+Epoch  26/60 | Loss 0.3739 | Val 0.5538 | Sem 94.71% | Bot 97.17% | InstAUC 0.998 | Thresh 0.886
+Epoch  27/60 | Loss 0.3700 | Val 0.5348 | Sem 94.84% | Bot 97.29% | InstAUC 0.998 | Thresh 0.871
+Epoch  28/60 | Loss 0.3494 | Val 0.4772 | Sem 95.08% | Bot 97.34% | InstAUC 0.998 | Thresh 0.885
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  29/60 | Loss 0.3422 | Val 0.4781 | Sem 95.21% | Bot 97.47% | InstAUC 0.998 | Thresh 0.898
+Epoch  30/60 | Loss 0.3250 | Val 0.5365 | Sem 95.53% | Bot 97.55% | InstAUC 0.998 | Thresh 0.865
+Epoch  31/60 | Loss 0.3130 | Val 0.5102 | Sem 95.53% | Bot 97.62% | InstAUC 0.998 | Thresh 0.874
+Epoch  32/60 | Loss 0.3040 | Val 0.4865 | Sem 95.61% | Bot 97.64% | InstAUC 0.998 | Thresh 0.859
+Epoch  33/60 | Loss 0.2885 | Val 0.5677 | Sem 95.77% | Bot 97.81% | InstAUC 0.998 | Thresh 0.873
+Epoch  34/60 | Loss 0.2757 | Val 0.5443 | Sem 96.10% | Bot 97.90% | InstAUC 0.998 | Thresh 0.872
+Epoch  35/60 | Loss 0.2705 | Val 0.5246 | Sem 96.14% | Bot 97.99% | InstAUC 0.998 | Thresh 0.854
+Epoch  36/60 | Loss 0.2694 | Val 0.4888 | Sem 96.30% | Bot 97.96% | InstAUC 0.998 | Thresh 0.873
+Epoch  37/60 | Loss 0.2566 | Val 0.4651 | Sem 96.44% | Bot 98.10% | InstAUC 0.998 | Thresh 0.878
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  38/60 | Loss 0.2504 | Val 0.4611 | Sem 96.45% | Bot 98.20% | InstAUC 0.998 | Thresh 0.870
+Checkpoint saved to results/mfinstseg_unified/seed1/checkpoint.pth
+Epoch  39/60 | Loss 0.2396 | Val 0.4809 | Sem 96.61% | Bot 98.24% | InstAUC 0.998 | Thresh 0.879
+Epoch  40/60 | Loss 0.2306 | Val 0.5221 | Sem 96.72% | Bot 98.26% | InstAUC 0.998 | Thresh 0.865
+Epoch  41/60 | Loss 0.2292 | Val 0.4791 | Sem 96.83% | Bot 98.30% | InstAUC 0.998 | Thresh 0.889
+Epoch  42/60 | Loss 0.2236 | Val 0.4904 | Sem 96.99% | Bot 98.39% | InstAUC 0.998 | Thresh 0.884
+Epoch  43/60 | Loss 0.2153 | Val 0.5262 | Sem 97.04% | Bot 98.38% | InstAUC 0.998 | Thresh 0.871
+Epoch  44/60 | Loss 0.2083 | Val 0.5071 | Sem 97.19% | Bot 98.45% | InstAUC 0.998 | Thresh 0.870
+Epoch  45/60 | Loss 0.1978 | Val 0.5128 | Sem 97.16% | Bot 98.56% | InstAUC 0.998 | Thresh 0.872
+Epoch  46/60 | Loss 0.1930 | Val 0.5117 | Sem 97.26% | Bot 98.57% | InstAUC 0.998 | Thresh 0.877
+Epoch  47/60 | Loss 0.1866 | Val 0.5766 | Sem 97.39% | Bot 98.64% | InstAUC 0.998 | Thresh 0.868
+Epoch  48/60 | Loss 0.1820 | Val 0.4864 | Sem 97.54% | Bot 98.66% | InstAUC 0.998 | Thresh 0.868
+
+Early stopping at epoch 48 (no val-loss improvement for 10 epochs); selected epoch 38
+Selection stamped on results/mfinstseg_unified/seed1/checkpoint.pth: epoch 38, stopping_reason=early_stop
+
+Training complete. Best checkpoint: results/mfinstseg_unified/seed1/checkpoint.pth (epoch 38, stopping_reason=early_stop)

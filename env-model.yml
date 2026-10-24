@@ -1,0 +1,57 @@
+# Environment 2 of 2 -- the CMCA encoder: training and evaluation.
+#
+# Pairs with env-extraction.yml. See that file for why the project needs two
+# environments (pythonocc-core 7.9.0 has no Python 3.13 build).
+#
+# CREATE
+#   conda env create -f env-model.yml
+#   conda activate capp-gpt-cmca
+#
+# WHAT THIS FILE NOW RECORDS
+# ==========================
+#
+# Captured 21 Sep 2026 from the Lightning AI studio, read out of the live
+# interpreter (`pip freeze`, `python -VV`), not transcribed from a wishlist.
+# This is the machine that produced T1 and that THE BATCH RUN will use, so
+# these are the versions the paper's runs are made of.
+#
+#   Studio      s_01m2rcd1wb80td8zxwgrj6apw0, Linux 6.8.0-1063-aws x86_64,
+#               glibc 2.39, conda env `cloudspace` (Lightning permits exactly
+#               one env per studio -- `conda env create` is REFUSED there, so
+#               on the studio this file is a record, not an installer)
+#   GPU         Tesla T4, CUDA build 12.8, cuDNN 9.10.2 (91002)
+#   idle spec   4 vCPU / 15 GB when no GPU is attached
+
+name: capp-gpt-cmca
+
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+
+dependencies:
+  # Exact versions read from the studio on 21 Sep 2026.
+  - python=3.12.11
+  - pip
+  - pip:
+      # torch/torchvision carry a local CUDA tag; install from the cu128 index:
+      #   pip install --index-url https://download.pytorch.org/whl/cu128 \
+      #       torch==2.8.0 torchvision==0.23.0
+      - torch==2.8.0
+      - torchvision==0.23.0
+      - numpy==1.26.4
+      - scikit-learn==1.3.2
+      - matplotlib==3.8.2
+      - PyYAML==6.0.3
+      # transitive, pinned because they move under matplotlib/sklearn/torch
+      - pillow==12.3.0
+      - networkx==3.6.1
+      - sympy==1.14.0
+      - filelock==3.32.6
+      - typing_extensions==4.16.0
+      - joblib==1.6.0
+      - threadpoolctl==3.6.0
+      - contourpy==1.3.3
+      - cycler==0.12.1
+      - fonttools==4.64.0
+      - kiwisolver==1.5.1

@@ -1,0 +1,87 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_semantic --config results/mfinstseg_bias_similarity/seed1/config.resolved.yaml
+
+
+Split file: datasets/splits/mfinstseg_70_10_20_seed42.json
+Loading 4116 feature files (attributes=standardized, bias=similarity) ...
+Loaded 4116 models
+  attribute dim: 4
+Dataset split: 4116 train / 588 val / 1176 test
+  attributes=standardized  bias=similarity  attr_dim=4  train adjacency density 0.214
+
+======================================================================
+STAGE 1: Semantic Segmentation -- Contrastive Alignment (CMCA)
+======================================================================
+Epoch   1/60 | Loss 1.7430 | Acc 45.79% | Val Loss 1.3860 | Val Acc 55.03%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   2/60 | Loss 1.2858 | Acc 58.71% | Val Loss 1.1762 | Val Acc 61.41%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   3/60 | Loss 1.0412 | Acc 66.66% | Val Loss 0.9165 | Val Acc 70.21%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   4/60 | Loss 0.9027 | Acc 70.84% | Val Loss 0.8324 | Val Acc 72.63%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   5/60 | Loss 0.8075 | Acc 74.08% | Val Loss 0.7455 | Val Acc 76.03%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   6/60 | Loss 0.7282 | Acc 76.36% | Val Loss 0.6847 | Val Acc 78.07%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   7/60 | Loss 0.6547 | Acc 78.82% | Val Loss 0.6299 | Val Acc 79.92%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   8/60 | Loss 0.6040 | Acc 80.37% | Val Loss 0.5775 | Val Acc 81.39%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch   9/60 | Loss 0.5588 | Acc 81.84% | Val Loss 0.5373 | Val Acc 82.59%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  10/60 | Loss 0.5198 | Acc 82.95% | Val Loss 0.5118 | Val Acc 83.40%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  11/60 | Loss 0.4882 | Acc 84.03% | Val Loss 0.4995 | Val Acc 83.97%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  12/60 | Loss 0.4655 | Acc 84.74% | Val Loss 0.4822 | Val Acc 84.78%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  13/60 | Loss 0.4397 | Acc 85.57% | Val Loss 0.4484 | Val Acc 85.87%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  14/60 | Loss 0.4159 | Acc 86.42% | Val Loss 0.4351 | Val Acc 86.18%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  15/60 | Loss 0.3973 | Acc 86.84% | Val Loss 0.4243 | Val Acc 86.58%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  16/60 | Loss 0.3802 | Acc 87.33% | Val Loss 0.4174 | Val Acc 86.58%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  17/60 | Loss 0.3589 | Acc 88.07% | Val Loss 0.4134 | Val Acc 86.92%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  18/60 | Loss 0.3421 | Acc 88.58% | Val Loss 0.3879 | Val Acc 87.52%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  19/60 | Loss 0.3187 | Acc 89.38% | Val Loss 0.3669 | Val Acc 88.52%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  20/60 | Loss 0.3063 | Acc 89.93% | Val Loss 0.3720 | Val Acc 88.26%
+Epoch  21/60 | Loss 0.2891 | Acc 90.37% | Val Loss 0.3668 | Val Acc 88.49%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  22/60 | Loss 0.2731 | Acc 90.90% | Val Loss 0.3608 | Val Acc 88.74%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  23/60 | Loss 0.2592 | Acc 91.32% | Val Loss 0.3258 | Val Acc 89.87%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  24/60 | Loss 0.2450 | Acc 91.69% | Val Loss 0.3404 | Val Acc 89.37%
+Epoch  25/60 | Loss 0.2383 | Acc 92.00% | Val Loss 0.3203 | Val Acc 89.96%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  26/60 | Loss 0.2226 | Acc 92.51% | Val Loss 0.3283 | Val Acc 90.10%
+Epoch  27/60 | Loss 0.2136 | Acc 92.82% | Val Loss 0.3301 | Val Acc 89.63%
+Epoch  28/60 | Loss 0.2033 | Acc 93.09% | Val Loss 0.3075 | Val Acc 90.63%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  29/60 | Loss 0.1900 | Acc 93.49% | Val Loss 0.3037 | Val Acc 90.92%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  30/60 | Loss 0.1852 | Acc 93.72% | Val Loss 0.2930 | Val Acc 91.00%
+Checkpoint saved to results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Epoch  31/60 | Loss 0.1768 | Acc 94.01% | Val Loss 0.2931 | Val Acc 90.95%
+Epoch  32/60 | Loss 0.1667 | Acc 94.33% | Val Loss 0.3013 | Val Acc 91.21%
+Epoch  33/60 | Loss 0.1592 | Acc 94.66% | Val Loss 0.3082 | Val Acc 91.02%
+Epoch  34/60 | Loss 0.1528 | Acc 94.78% | Val Loss 0.3214 | Val Acc 91.16%
+Epoch  35/60 | Loss 0.1477 | Acc 95.00% | Val Loss 0.3326 | Val Acc 90.67%
+Epoch  36/60 | Loss 0.1431 | Acc 95.15% | Val Loss 0.2938 | Val Acc 91.90%
+Epoch  37/60 | Loss 0.1358 | Acc 95.33% | Val Loss 0.2965 | Val Acc 91.97%
+Epoch  38/60 | Loss 0.1326 | Acc 95.50% | Val Loss 0.3113 | Val Acc 91.53%
+Epoch  39/60 | Loss 0.1242 | Acc 95.64% | Val Loss 0.2971 | Val Acc 92.15%
+Epoch  40/60 | Loss 0.1182 | Acc 95.93% | Val Loss 0.3095 | Val Acc 91.73%
+
+Early stopping at epoch 40 (no val-loss improvement for 10 epochs); selected epoch 30
+Selection stamped on results/mfinstseg_bias_similarity/seed1/checkpoint.pth: epoch 30, stopping_reason=early_stop
+Checkpoint loaded from results/mfinstseg_bias_similarity/seed1/checkpoint.pth
+Scoring the selected checkpoint (epoch 30, stopping_reason=early_stop)
+
+Test Accuracy: 90.77% (28861/31795 faces)
+Training complete. Best checkpoint: results/mfinstseg_bias_similarity/seed1/checkpoint.pth

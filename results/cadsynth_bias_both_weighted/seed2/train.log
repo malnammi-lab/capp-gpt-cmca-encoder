@@ -1,0 +1,126 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_semantic --config results/cadsynth_bias_both_weighted/seed2/config.resolved.yaml
+
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Loading 4244 feature files (attributes=standardized, bias=both) ...
+Loaded 4244 models
+  attribute dim: 4
+Dataset split: 4244 train / 606 val / 1212 test
+  attributes=standardized  bias=both  attr_dim=4  train adjacency density 0.204
+
+Class counts:
+  Class  0: 65521 samples
+  Class  1:  3685 samples
+  Class  2:  1135 samples
+  Class  3:  3752 samples
+  Class  4:  2623 samples
+  Class  5:  5686 samples
+  Class  6:  1309 samples
+  Class  7:  1747 samples
+  Class  8:  1219 samples
+  Class  9:  1720 samples
+  Class 10:  1180 samples
+  Class 11:  4488 samples
+  Class 12:  3080 samples
+  Class 13:  2508 samples
+  Class 14:  4012 samples
+  Class 15:   811 samples
+  Class 16:   522 samples
+  Class 17:   985 samples
+  Class 18:  1156 samples
+  Class 19:  2059 samples
+  Class 20:  2175 samples
+  Class 21:  2898 samples
+  Class 22:  1758 samples
+  Class 23:  1262 samples
+  Class 24:   874 samples
+
+Class weights (inverse-frequency, normalised):
+  Class  0: 0.0245
+  Class  1: 0.4350
+  Class  2: 1.4122
+  Class  3: 0.4272
+  Class  4: 0.6111
+  Class  5: 0.2819
+  Class  6: 1.2245
+  Class  7: 0.9175
+  Class  8: 1.3149
+  Class  9: 0.9319
+  Class 10: 1.3583
+  Class 11: 0.3571
+  Class 12: 0.5204
+  Class 13: 0.6391
+  Class 14: 0.3995
+  Class 15: 1.9764
+  Class 16: 3.0706
+  Class 17: 1.6273
+  Class 18: 1.3865
+  Class 19: 0.7785
+  Class 20: 0.7369
+  Class 21: 0.5531
+  Class 22: 0.9117
+  Class 23: 1.2701
+  Class 24: 1.8339
+
+======================================================================
+STAGE 1: Semantic Segmentation -- Contrastive Alignment (CMCA)
+======================================================================
+Epoch   1/60 | Loss 2.0733 | Acc 37.72% | Val Loss 1.4071 | Val Acc 52.33%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   2/60 | Loss 1.2965 | Acc 53.97% | Val Loss 1.0411 | Val Acc 52.49%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   3/60 | Loss 0.9430 | Acc 60.88% | Val Loss 0.7516 | Val Acc 63.86%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   4/60 | Loss 0.7807 | Acc 65.36% | Val Loss 0.6192 | Val Acc 73.48%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   5/60 | Loss 0.6727 | Acc 69.26% | Val Loss 0.5610 | Val Acc 68.27%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   6/60 | Loss 0.5896 | Acc 72.08% | Val Loss 0.5122 | Val Acc 77.83%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   7/60 | Loss 0.5324 | Acc 73.88% | Val Loss 0.4841 | Val Acc 77.68%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   8/60 | Loss 0.4823 | Acc 76.05% | Val Loss 0.3948 | Val Acc 79.45%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch   9/60 | Loss 0.4388 | Acc 77.33% | Val Loss 0.3784 | Val Acc 79.75%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  10/60 | Loss 0.4064 | Acc 78.83% | Val Loss 0.3734 | Val Acc 80.88%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  11/60 | Loss 0.3727 | Acc 79.78% | Val Loss 0.3696 | Val Acc 83.68%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  12/60 | Loss 0.3457 | Acc 81.07% | Val Loss 0.3558 | Val Acc 81.86%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  13/60 | Loss 0.3274 | Acc 81.81% | Val Loss 0.3211 | Val Acc 81.74%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  14/60 | Loss 0.2995 | Acc 82.89% | Val Loss 0.3329 | Val Acc 82.18%
+Epoch  15/60 | Loss 0.2867 | Acc 83.93% | Val Loss 0.2966 | Val Acc 85.22%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  16/60 | Loss 0.2746 | Acc 84.14% | Val Loss 0.2832 | Val Acc 83.12%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  17/60 | Loss 0.2551 | Acc 84.76% | Val Loss 0.2846 | Val Acc 86.70%
+Epoch  18/60 | Loss 0.2398 | Acc 85.65% | Val Loss 0.3159 | Val Acc 85.07%
+Epoch  19/60 | Loss 0.2286 | Acc 86.12% | Val Loss 0.2598 | Val Acc 84.11%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  20/60 | Loss 0.2103 | Acc 86.82% | Val Loss 0.2724 | Val Acc 87.56%
+Epoch  21/60 | Loss 0.1962 | Acc 87.55% | Val Loss 0.2611 | Val Acc 87.66%
+Epoch  22/60 | Loss 0.1898 | Acc 87.90% | Val Loss 0.2575 | Val Acc 87.37%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  23/60 | Loss 0.1784 | Acc 88.27% | Val Loss 0.2398 | Val Acc 86.61%
+Checkpoint saved to results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Epoch  24/60 | Loss 0.1759 | Acc 88.71% | Val Loss 0.2535 | Val Acc 89.44%
+Epoch  25/60 | Loss 0.1631 | Acc 89.41% | Val Loss 0.2732 | Val Acc 87.81%
+Epoch  26/60 | Loss 0.1595 | Acc 89.47% | Val Loss 0.2541 | Val Acc 88.14%
+Epoch  27/60 | Loss 0.1515 | Acc 90.02% | Val Loss 0.2735 | Val Acc 87.74%
+Epoch  28/60 | Loss 0.1432 | Acc 90.64% | Val Loss 0.2763 | Val Acc 91.80%
+Epoch  29/60 | Loss 0.1366 | Acc 90.92% | Val Loss 0.2518 | Val Acc 85.75%
+Epoch  30/60 | Loss 0.1310 | Acc 91.37% | Val Loss 0.2728 | Val Acc 90.11%
+Epoch  31/60 | Loss 0.1242 | Acc 91.40% | Val Loss 0.2690 | Val Acc 89.65%
+Epoch  32/60 | Loss 0.1165 | Acc 91.91% | Val Loss 0.2504 | Val Acc 90.57%
+Epoch  33/60 | Loss 0.1145 | Acc 92.25% | Val Loss 0.2575 | Val Acc 92.15%
+
+Early stopping at epoch 33 (no val-loss improvement for 10 epochs); selected epoch 23
+Selection stamped on results/cadsynth_bias_both_weighted/seed2/checkpoint.pth: epoch 23, stopping_reason=early_stop
+Checkpoint loaded from results/cadsynth_bias_both_weighted/seed2/checkpoint.pth
+Scoring the selected checkpoint (epoch 23, stopping_reason=early_stop)
+
+Test Accuracy: 86.04% (29546/34338 faces)
+Training complete. Best checkpoint: results/cadsynth_bias_both_weighted/seed2/checkpoint.pth

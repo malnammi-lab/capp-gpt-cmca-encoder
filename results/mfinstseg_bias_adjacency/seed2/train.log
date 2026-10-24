@@ -1,0 +1,81 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_semantic --config results/mfinstseg_bias_adjacency/seed2/config.resolved.yaml
+
+
+Split file: datasets/splits/mfinstseg_70_10_20_seed42.json
+Loading 4116 feature files (attributes=standardized, bias=adjacency) ...
+Loaded 4116 models
+  attribute dim: 4
+Dataset split: 4116 train / 588 val / 1176 test
+  attributes=standardized  bias=adjacency  attr_dim=4  train adjacency density 0.214
+
+======================================================================
+STAGE 1: Semantic Segmentation -- Contrastive Alignment (CMCA)
+======================================================================
+Epoch   1/60 | Loss 1.5922 | Acc 50.83% | Val Loss 1.1294 | Val Acc 63.74%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   2/60 | Loss 0.9966 | Acc 68.16% | Val Loss 0.7381 | Val Acc 76.18%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   3/60 | Loss 0.7082 | Acc 77.77% | Val Loss 0.5787 | Val Acc 81.88%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   4/60 | Loss 0.5669 | Acc 82.45% | Val Loss 0.4706 | Val Acc 85.24%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   5/60 | Loss 0.4781 | Acc 85.12% | Val Loss 0.3922 | Val Acc 87.47%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   6/60 | Loss 0.4224 | Acc 86.81% | Val Loss 0.3624 | Val Acc 88.74%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   7/60 | Loss 0.3806 | Acc 88.04% | Val Loss 0.3389 | Val Acc 89.17%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   8/60 | Loss 0.3480 | Acc 89.11% | Val Loss 0.3143 | Val Acc 90.03%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch   9/60 | Loss 0.3213 | Acc 89.89% | Val Loss 0.3024 | Val Acc 90.59%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  10/60 | Loss 0.2986 | Acc 90.57% | Val Loss 0.2780 | Val Acc 91.27%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  11/60 | Loss 0.2810 | Acc 91.14% | Val Loss 0.2568 | Val Acc 91.89%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  12/60 | Loss 0.2640 | Acc 91.59% | Val Loss 0.2395 | Val Acc 92.63%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  13/60 | Loss 0.2440 | Acc 92.20% | Val Loss 0.2479 | Val Acc 92.30%
+Epoch  14/60 | Loss 0.2337 | Acc 92.53% | Val Loss 0.2577 | Val Acc 92.13%
+Epoch  15/60 | Loss 0.2201 | Acc 92.94% | Val Loss 0.2129 | Val Acc 93.34%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  16/60 | Loss 0.2097 | Acc 93.27% | Val Loss 0.2132 | Val Acc 93.72%
+Epoch  17/60 | Loss 0.1975 | Acc 93.58% | Val Loss 0.2094 | Val Acc 93.52%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  18/60 | Loss 0.1875 | Acc 93.97% | Val Loss 0.2062 | Val Acc 93.63%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  19/60 | Loss 0.1786 | Acc 94.25% | Val Loss 0.2014 | Val Acc 93.86%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  20/60 | Loss 0.1697 | Acc 94.53% | Val Loss 0.1947 | Val Acc 93.90%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  21/60 | Loss 0.1659 | Acc 94.61% | Val Loss 0.1945 | Val Acc 94.06%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  22/60 | Loss 0.1559 | Acc 94.96% | Val Loss 0.1960 | Val Acc 94.18%
+Epoch  23/60 | Loss 0.1476 | Acc 95.14% | Val Loss 0.1979 | Val Acc 94.24%
+Epoch  24/60 | Loss 0.1430 | Acc 95.36% | Val Loss 0.2016 | Val Acc 94.46%
+Epoch  25/60 | Loss 0.1348 | Acc 95.50% | Val Loss 0.1922 | Val Acc 94.56%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  26/60 | Loss 0.1303 | Acc 95.72% | Val Loss 0.1962 | Val Acc 94.52%
+Epoch  27/60 | Loss 0.1223 | Acc 96.00% | Val Loss 0.1965 | Val Acc 94.43%
+Epoch  28/60 | Loss 0.1179 | Acc 96.10% | Val Loss 0.1931 | Val Acc 94.68%
+Epoch  29/60 | Loss 0.1147 | Acc 96.18% | Val Loss 0.2070 | Val Acc 94.51%
+Epoch  30/60 | Loss 0.1083 | Acc 96.40% | Val Loss 0.1708 | Val Acc 95.01%
+Checkpoint saved to results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Epoch  31/60 | Loss 0.1074 | Acc 96.37% | Val Loss 0.1853 | Val Acc 95.08%
+Epoch  32/60 | Loss 0.1025 | Acc 96.61% | Val Loss 0.1836 | Val Acc 95.23%
+Epoch  33/60 | Loss 0.0993 | Acc 96.69% | Val Loss 0.1904 | Val Acc 94.85%
+Epoch  34/60 | Loss 0.0976 | Acc 96.74% | Val Loss 0.1762 | Val Acc 95.42%
+Epoch  35/60 | Loss 0.0922 | Acc 96.89% | Val Loss 0.1839 | Val Acc 95.28%
+Epoch  36/60 | Loss 0.0881 | Acc 96.99% | Val Loss 0.1803 | Val Acc 95.55%
+Epoch  37/60 | Loss 0.0826 | Acc 97.24% | Val Loss 0.1934 | Val Acc 95.17%
+Epoch  38/60 | Loss 0.0817 | Acc 97.24% | Val Loss 0.1832 | Val Acc 95.23%
+Epoch  39/60 | Loss 0.0791 | Acc 97.38% | Val Loss 0.1923 | Val Acc 95.08%
+Epoch  40/60 | Loss 0.0763 | Acc 97.44% | Val Loss 0.1929 | Val Acc 95.39%
+
+Early stopping at epoch 40 (no val-loss improvement for 10 epochs); selected epoch 30
+Selection stamped on results/mfinstseg_bias_adjacency/seed2/checkpoint.pth: epoch 30, stopping_reason=early_stop
+Checkpoint loaded from results/mfinstseg_bias_adjacency/seed2/checkpoint.pth
+Scoring the selected checkpoint (epoch 30, stopping_reason=early_stop)
+
+Test Accuracy: 94.57% (30067/31795 faces)
+Training complete. Best checkpoint: results/mfinstseg_bias_adjacency/seed2/checkpoint.pth

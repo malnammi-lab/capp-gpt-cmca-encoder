@@ -1,0 +1,124 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_resnet --config results/resnet_cadsynth_ce_weighted/seed1/config.resolved.yaml
+
+Classifier head sized from config: 25 classes
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Dataset split: 118165 train / 17060 val / 34338 test faces  (4244 / 1212 models)
+
+Class counts:
+  Class  0: 65521 samples
+  Class  1:  3685 samples
+  Class  2:  1135 samples
+  Class  3:  3752 samples
+  Class  4:  2623 samples
+  Class  5:  5686 samples
+  Class  6:  1309 samples
+  Class  7:  1747 samples
+  Class  8:  1219 samples
+  Class  9:  1720 samples
+  Class 10:  1180 samples
+  Class 11:  4488 samples
+  Class 12:  3080 samples
+  Class 13:  2508 samples
+  Class 14:  4012 samples
+  Class 15:   811 samples
+  Class 16:   522 samples
+  Class 17:   985 samples
+  Class 18:  1156 samples
+  Class 19:  2059 samples
+  Class 20:  2175 samples
+  Class 21:  2898 samples
+  Class 22:  1758 samples
+  Class 23:  1262 samples
+  Class 24:   874 samples
+
+Class weights (inverse-frequency, normalised):
+  Class  0: 0.0245
+  Class  1: 0.4350
+  Class  2: 1.4122
+  Class  3: 0.4272
+  Class  4: 0.6111
+  Class  5: 0.2819
+  Class  6: 1.2245
+  Class  7: 0.9175
+  Class  8: 1.3149
+  Class  9: 0.9319
+  Class 10: 1.3583
+  Class 11: 0.3571
+  Class 12: 0.5204
+  Class 13: 0.6391
+  Class 14: 0.3995
+  Class 15: 1.9764
+  Class 16: 3.0706
+  Class 17: 1.6273
+  Class 18: 1.3865
+  Class 19: 0.7785
+  Class 20: 0.7369
+  Class 21: 0.5531
+  Class 22: 0.9117
+  Class 23: 1.2701
+  Class 24: 1.8339
+
+Model parameters: 11,728,217
+
+======================================================================
+RESNET BASELINE: Cross-Modal Contrastive Alignment
+======================================================================
+Epoch   1/60 | Loss 2.3462 | Acc 18.22% | LR 3.00e-04 | Val Loss 1.9759 | Val Acc 18.08%
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Epoch  10/60 | Loss 1.2630 | Acc 52.45% | LR 2.84e-04 | Val Loss 1.2884 | Val Acc 52.86%
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Epoch  20/60 | Loss 0.9986 | Acc 60.58% | LR 2.32e-04 | Val Loss 1.1503 | Val Acc 58.70%
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Checkpoint saved to results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Epoch  30/60 | Loss 0.7945 | Acc 67.06% | LR 1.58e-04 | Val Loss 1.1301 | Val Acc 61.69%
+
+Early stopping at epoch 32 (no val-loss improvement for 10 epochs); selected epoch 22
+Selection stamped on results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth: epoch 22, stopping_reason=early_stop
+
+======================================================================
+TEST SET EVALUATION
+======================================================================
+Checkpoint loaded from results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth
+Scoring the selected checkpoint (epoch 22, stopping_reason=early_stop)
+Test Accuracy: 59.30%
+  Class  0: 63.10% (19248 samples)
+  Class  1: 35.02% (1065 samples)
+  Class  2: 59.35% (337 samples)
+  Class  3: 57.50% (1106 samples)
+  Class  4: 35.96% (737 samples)
+  Class  5: 46.31% (1572 samples)
+  Class  6: 50.16% (321 samples)
+  Class  7: 57.79% (462 samples)
+  Class  8: 57.00% (393 samples)
+  Class  9: 65.29% (510 samples)
+  Class 10: 71.39% (346 samples)
+  Class 11: 39.22% (1224 samples)
+  Class 12: 56.00% (1000 samples)
+  Class 13: 30.12% (664 samples)
+  Class 14: 60.07% (1162 samples)
+  Class 15: 86.04% (222 samples)
+  Class 16: 87.59% (145 samples)
+  Class 17: 77.46% (284 samples)
+  Class 18: 87.65% (332 samples)
+  Class 19: 72.43% (602 samples)
+  Class 20: 36.14% (642 samples)
+  Class 21: 50.85% (765 samples)
+  Class 22: 77.12% (612 samples)
+  Class 23: 80.98% (368 samples)
+  Class 24: 87.21% (219 samples)
+
+Training complete. Best checkpoint: results/resnet_cadsynth_ce_weighted/seed1/checkpoint.pth (epoch 22, stopping_reason=early_stop)

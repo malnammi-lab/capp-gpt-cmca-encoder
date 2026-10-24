@@ -1,0 +1,139 @@
+$ /home/zeus/miniconda3/envs/cloudspace/bin/python -u -m src.training.train_semantic --config results/cadsynth_bias_similarity_weighted/seed1/config.resolved.yaml
+
+
+Split file: datasets/splits/cadsynth_70_10_20_seed42.json
+Loading 4244 feature files (attributes=standardized, bias=similarity) ...
+Loaded 4244 models
+  attribute dim: 4
+Dataset split: 4244 train / 606 val / 1212 test
+  attributes=standardized  bias=similarity  attr_dim=4  train adjacency density 0.204
+
+Class counts:
+  Class  0: 65521 samples
+  Class  1:  3685 samples
+  Class  2:  1135 samples
+  Class  3:  3752 samples
+  Class  4:  2623 samples
+  Class  5:  5686 samples
+  Class  6:  1309 samples
+  Class  7:  1747 samples
+  Class  8:  1219 samples
+  Class  9:  1720 samples
+  Class 10:  1180 samples
+  Class 11:  4488 samples
+  Class 12:  3080 samples
+  Class 13:  2508 samples
+  Class 14:  4012 samples
+  Class 15:   811 samples
+  Class 16:   522 samples
+  Class 17:   985 samples
+  Class 18:  1156 samples
+  Class 19:  2059 samples
+  Class 20:  2175 samples
+  Class 21:  2898 samples
+  Class 22:  1758 samples
+  Class 23:  1262 samples
+  Class 24:   874 samples
+
+Class weights (inverse-frequency, normalised):
+  Class  0: 0.0245
+  Class  1: 0.4350
+  Class  2: 1.4122
+  Class  3: 0.4272
+  Class  4: 0.6111
+  Class  5: 0.2819
+  Class  6: 1.2245
+  Class  7: 0.9175
+  Class  8: 1.3149
+  Class  9: 0.9319
+  Class 10: 1.3583
+  Class 11: 0.3571
+  Class 12: 0.5204
+  Class 13: 0.6391
+  Class 14: 0.3995
+  Class 15: 1.9764
+  Class 16: 3.0706
+  Class 17: 1.6273
+  Class 18: 1.3865
+  Class 19: 0.7785
+  Class 20: 0.7369
+  Class 21: 0.5531
+  Class 22: 0.9117
+  Class 23: 1.2701
+  Class 24: 1.8339
+
+======================================================================
+STAGE 1: Semantic Segmentation -- Contrastive Alignment (CMCA)
+======================================================================
+Epoch   1/60 | Loss 2.3098 | Acc 32.63% | Val Loss 1.8849 | Val Acc 47.38%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   2/60 | Loss 1.7963 | Acc 45.64% | Val Loss 1.6620 | Val Acc 47.14%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   3/60 | Loss 1.5625 | Acc 50.47% | Val Loss 1.3758 | Val Acc 55.40%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   4/60 | Loss 1.3236 | Acc 55.24% | Val Loss 1.1892 | Val Acc 57.69%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   5/60 | Loss 1.1807 | Acc 57.84% | Val Loss 1.1017 | Val Acc 60.31%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   6/60 | Loss 1.0756 | Acc 59.81% | Val Loss 0.9907 | Val Acc 59.09%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   7/60 | Loss 0.9821 | Acc 61.72% | Val Loss 1.0010 | Val Acc 63.86%
+Epoch   8/60 | Loss 0.9118 | Acc 63.56% | Val Loss 0.8650 | Val Acc 62.85%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch   9/60 | Loss 0.8469 | Acc 64.89% | Val Loss 0.8125 | Val Acc 64.58%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  10/60 | Loss 0.7983 | Acc 66.00% | Val Loss 0.7356 | Val Acc 65.44%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  11/60 | Loss 0.7523 | Acc 66.83% | Val Loss 0.7177 | Val Acc 68.65%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  12/60 | Loss 0.7100 | Acc 67.98% | Val Loss 0.7183 | Val Acc 67.92%
+Epoch  13/60 | Loss 0.6707 | Acc 69.12% | Val Loss 0.7083 | Val Acc 67.41%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  14/60 | Loss 0.6373 | Acc 70.08% | Val Loss 0.6833 | Val Acc 69.68%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  15/60 | Loss 0.6042 | Acc 70.72% | Val Loss 0.6400 | Val Acc 68.74%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  16/60 | Loss 0.5709 | Acc 71.83% | Val Loss 0.6217 | Val Acc 71.68%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  17/60 | Loss 0.5376 | Acc 72.41% | Val Loss 0.6048 | Val Acc 71.15%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  18/60 | Loss 0.5033 | Acc 73.36% | Val Loss 0.5775 | Val Acc 69.03%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  19/60 | Loss 0.4743 | Acc 74.44% | Val Loss 0.5867 | Val Acc 71.60%
+Epoch  20/60 | Loss 0.4483 | Acc 74.98% | Val Loss 0.5337 | Val Acc 73.32%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  21/60 | Loss 0.4216 | Acc 75.88% | Val Loss 0.5458 | Val Acc 78.80%
+Epoch  22/60 | Loss 0.4056 | Acc 76.90% | Val Loss 0.5431 | Val Acc 68.36%
+Epoch  23/60 | Loss 0.3799 | Acc 77.50% | Val Loss 0.5441 | Val Acc 75.24%
+Epoch  24/60 | Loss 0.3582 | Acc 78.25% | Val Loss 0.5470 | Val Acc 76.96%
+Epoch  25/60 | Loss 0.3461 | Acc 79.19% | Val Loss 0.5154 | Val Acc 73.43%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  26/60 | Loss 0.3252 | Acc 79.57% | Val Loss 0.5025 | Val Acc 80.55%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  27/60 | Loss 0.3112 | Acc 80.44% | Val Loss 0.5005 | Val Acc 78.15%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  28/60 | Loss 0.2972 | Acc 81.30% | Val Loss 0.5865 | Val Acc 75.79%
+Epoch  29/60 | Loss 0.2838 | Acc 81.29% | Val Loss 0.5229 | Val Acc 80.77%
+Epoch  30/60 | Loss 0.2658 | Acc 82.19% | Val Loss 0.5199 | Val Acc 79.77%
+Epoch  31/60 | Loss 0.2585 | Acc 82.71% | Val Loss 0.5497 | Val Acc 78.72%
+Epoch  32/60 | Loss 0.2516 | Acc 83.10% | Val Loss 0.5337 | Val Acc 81.59%
+Epoch  33/60 | Loss 0.2366 | Acc 83.83% | Val Loss 0.4974 | Val Acc 78.66%
+Checkpoint saved to results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Epoch  34/60 | Loss 0.2252 | Acc 84.04% | Val Loss 0.5364 | Val Acc 80.65%
+Epoch  35/60 | Loss 0.2137 | Acc 84.87% | Val Loss 0.5426 | Val Acc 82.64%
+Epoch  36/60 | Loss 0.2064 | Acc 85.50% | Val Loss 0.5146 | Val Acc 81.00%
+Epoch  37/60 | Loss 0.1997 | Acc 85.79% | Val Loss 0.5159 | Val Acc 83.31%
+Epoch  38/60 | Loss 0.1904 | Acc 86.52% | Val Loss 0.5339 | Val Acc 83.56%
+Epoch  39/60 | Loss 0.1823 | Acc 86.79% | Val Loss 0.5192 | Val Acc 85.78%
+Epoch  40/60 | Loss 0.1797 | Acc 87.32% | Val Loss 0.5238 | Val Acc 82.67%
+Epoch  41/60 | Loss 0.1651 | Acc 87.53% | Val Loss 0.5784 | Val Acc 83.68%
+Epoch  42/60 | Loss 0.1619 | Acc 87.88% | Val Loss 0.5245 | Val Acc 85.40%
+Epoch  43/60 | Loss 0.1585 | Acc 88.47% | Val Loss 0.5093 | Val Acc 86.04%
+
+Early stopping at epoch 43 (no val-loss improvement for 10 epochs); selected epoch 33
+Selection stamped on results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth: epoch 33, stopping_reason=early_stop
+Checkpoint loaded from results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth
+Scoring the selected checkpoint (epoch 33, stopping_reason=early_stop)
+
+Test Accuracy: 78.66% (27011/34338 faces)
+Training complete. Best checkpoint: results/cadsynth_bias_similarity_weighted/seed1/checkpoint.pth

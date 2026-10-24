@@ -1,0 +1,65 @@
+# MFInstSeg -- Unified (Approach A): semantic + bottom + instance in one model
+#
+# Re-extracted MFInstSeg corpus (real adjacency, real convexity/dihedral angle,
+# UV-Net unit-cube normalisation). 70/10/20 train/val/test: training stops on
+# the one evaluated, and every threshold is tuned on VALIDATION.
+#
+# Run:
+#   python -m src.training.train_unified --config configs/mfinstseg_unified.yaml
+
+experiment_name: mfinstseg_unified
+seed: 42
+
+dataset:
+  name: mfinstaseg
+  json_dir: ../data/mfinstaseg/
+  split_file: datasets/splits/mfinstseg_70_10_20_seed42.json
+  n_classes: 25
+  attributes: standardized
+  norm_stats: datasets/splits/mfinstseg_norm_train.json
+  one_hot_type: false
+
+bias:
+  type: both             # similarity | adjacency | both
+  lambda_adj: 1.0
+  lambda_sim: 1.0
+
+model:
+  type: brep_encoder
+  version: v1
+  d_model: 128
+  n_heads: 8
+  n_layers: 4
+  dim_feedforward: 256
+  dropout: 0.1
+
+label_encoder:
+  embedding_dim: 128
+
+loss:
+  temperature: 0.07
+  hard_mining_ratio: 0.3
+  # All THREE tasks, jointly, at equal weight -- this is what makes T5 the
+  # "unified" row: one encoder producing per-face embeddings that must serve
+  # semantic classification, bottom-face identification and instance grouping
+  # at once. train_unified.py reads these three keys (lines 241-244) and adds
+  # the weighted terms; evaluate_unified.py scores all three back out.
+  weights:
+    semantic: 1.0
+    bottom: 1.0
+    instance: 1.0
+
+training:
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+  patience: 10
+  scheduler: null
+
+paths:
+  checkpoint: results/checkpoints/mfinstseg_unified.pth
+  figures: results/figures/mfinstseg_unified/

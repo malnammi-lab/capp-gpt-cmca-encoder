@@ -1,0 +1,66 @@
+# ResNet-18 on CADSynth, CROSS-ENTROPY, CLASS-WEIGHTED -- tier T4.
+#
+# This is the footnote run, not a headline number.
+#
+# One class-weighting policy applies across every
+# arm and the baseline. The headline policy is
+# unweighted. This config is the deliberate exception: the same cell run under
+# the other policy so the paper can state in one footnote what the choice costs,
+# rather than leaving a reviewer to wonder.
+#
+# It is byte-identical to resnet_cadsynth_ce.yaml except for
+# `loss.use_class_weights`, `experiment_name` and `paths`. Nothing else may
+# differ, or the footnote measures more than one thing.
+#
+# Report both accuracy and macro-F1 for this cell. Class 0 is the majority
+# of CADSynth faces, so the weighted and unweighted rows answer different
+# questions.
+#
+# Run:
+#   python runners/run_all.py --tier T4 --seeds 0 1 2 3 4
+
+experiment_name: resnet_cadsynth_ce_weighted
+seed: 42
+
+dataset:
+  name: cadsynth_faces
+  # Same corpus, same split file as every other cell of the 2x2 ablation and as
+  # the graph arms. See resnet_cadsynth.yaml for why the graph split is reused.
+  json_dir: ../data/cadsynth_faces/
+  n_classes: 25
+  split_file: datasets/splits/cadsynth_70_10_20_seed42.json
+  # NO `norm_stats` HERE, DELIBERATELY. Every other config in configs/ carries
+  # one, so its absence looks like an oversight; it is not. norm_stats is read
+  # only by CMCADataset when attributes="standardized" (src/data/brep_dataset.py).
+  # The ResNet cells load UVGridLabelDataset (src/data/uv_dataset.py), which
+  # performs no standardisation of any kind -- the UV grids are already in unit
+  # -cube coordinates. Adding norm_stats here would be silently ignored.
+  # train_split and val_split are unset. The split file supplies train, val, and test.
+
+model:
+  type: resnet_encoder
+  embedding_dim: 512
+
+loss:
+  type: cross_entropy          # prototype_infonce | cross_entropy
+  # THE ONE LINE THAT DIFFERS FROM resnet_cadsynth_ce.yaml.
+  # true here on purpose: this is the footnote arm of decision 2.
+  use_class_weights: true
+
+training:
+  # Same selection rule as every other arm. It must stay
+  # identical to resnet_cadsynth_ce.yaml or the footnote stops being comparable
+  # to the cell it annotates.
+  # Early stopping on validation loss, patience 10, cap of 60 epochs.
+  # The evaluated checkpoint is the one with the best validation loss.
+  max_epochs: 60
+  batch_size: 128
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  patience: 10
+  scheduler: cosine_annealing
+
+paths:
+  checkpoint: results/checkpoints/resnet_cadsynth_ce_weighted.pth
+  figures: results/figures/resnet_cadsynth_ce_weighted/

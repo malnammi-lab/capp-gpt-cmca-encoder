@@ -1,0 +1,217 @@
+{
+  "written_by": "runners/compare_arms.py",
+  "quotable": false,
+  "complete": true,
+  "sound": true,
+  "quotable_tooling": [
+    "runners/aggregate_seeds.py",
+    "runners/check_tier.py"
+  ],
+  "dataset": "cadsynth",
+  "results_root": "results",
+  "seeds_requested": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "code_fingerprint_live": "d3e3efa6084f1ab1",
+  "code_fingerprint_recorded": {
+    "similarity seed 0": "d3e3efa6084f1ab1",
+    "similarity seed 0 (scored by)": "d3e3efa6084f1ab1",
+    "similarity seed 1": "d3e3efa6084f1ab1",
+    "similarity seed 1 (scored by)": "d3e3efa6084f1ab1",
+    "similarity seed 2": "d3e3efa6084f1ab1",
+    "similarity seed 2 (scored by)": "d3e3efa6084f1ab1",
+    "similarity seed 3": "d3e3efa6084f1ab1",
+    "similarity seed 3 (scored by)": "d3e3efa6084f1ab1",
+    "similarity seed 4": "d3e3efa6084f1ab1",
+    "similarity seed 4 (scored by)": "d3e3efa6084f1ab1",
+    "adjacency seed 0": "d3e3efa6084f1ab1",
+    "adjacency seed 0 (scored by)": "d3e3efa6084f1ab1",
+    "adjacency seed 1": "d3e3efa6084f1ab1",
+    "adjacency seed 1 (scored by)": "d3e3efa6084f1ab1",
+    "adjacency seed 2": "d3e3efa6084f1ab1",
+    "adjacency seed 2 (scored by)": "d3e3efa6084f1ab1",
+    "adjacency seed 3": "d3e3efa6084f1ab1",
+    "adjacency seed 3 (scored by)": "d3e3efa6084f1ab1",
+    "adjacency seed 4": "d3e3efa6084f1ab1",
+    "adjacency seed 4 (scored by)": "d3e3efa6084f1ab1",
+    "both seed 0": "d3e3efa6084f1ab1",
+    "both seed 0 (scored by)": "d3e3efa6084f1ab1",
+    "both seed 1": "d3e3efa6084f1ab1",
+    "both seed 1 (scored by)": "d3e3efa6084f1ab1",
+    "both seed 2": "d3e3efa6084f1ab1",
+    "both seed 2 (scored by)": "d3e3efa6084f1ab1",
+    "both seed 3": "d3e3efa6084f1ab1",
+    "both seed 3 (scored by)": "d3e3efa6084f1ab1",
+    "both seed 4": "d3e3efa6084f1ab1",
+    "both seed 4 (scored by)": "d3e3efa6084f1ab1",
+    "shuffled seed 0": "d3e3efa6084f1ab1",
+    "shuffled seed 0 (scored by)": "d3e3efa6084f1ab1",
+    "shuffled seed 1": "d3e3efa6084f1ab1",
+    "shuffled seed 1 (scored by)": "d3e3efa6084f1ab1",
+    "shuffled seed 2": "d3e3efa6084f1ab1",
+    "shuffled seed 2 (scored by)": "d3e3efa6084f1ab1",
+    "shuffled seed 3": "d3e3efa6084f1ab1",
+    "shuffled seed 3 (scored by)": "d3e3efa6084f1ab1",
+    "shuffled seed 4": "d3e3efa6084f1ab1",
+    "shuffled seed 4 (scored by)": "d3e3efa6084f1ab1"
+  },
+  "code_fingerprint_stale": {},
+  "code_fingerprint_stale_runs": [],
+  "code_fingerprint_stale_entry_count": 0,
+  "code_fingerprint_stale_run_count": 0,
+  "runs_without_code_fingerprint": [],
+  "fingerprints_match_this_tree": true,
+  "problems": [],
+  "selection_scheme": "the selection rule: early stop on val loss, patience 10, cap 60, best-val checkpoint",
+  "arms": {
+    "similarity": {
+      "seeds_found": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "seeds_missing": [],
+      "selected_epochs": [
+        37,
+        42,
+        48,
+        49,
+        50
+      ],
+      "stopping_reasons": [
+        "early_stop"
+      ],
+      "overall_accuracy_mean": 0.9314520356456404,
+      "overall_accuracy_std": 0.0017579086778246997,
+      "macro_precision_mean": 0.8841247022976855,
+      "macro_recall_mean": 0.8643001406659266,
+      "macro_f1_mean": 0.87116657877024,
+      "macro_f1_std": 0.003265807980798248,
+      "mean_iou_mean": 0.7880836184388025,
+      "n_samples": [
+        34338
+      ],
+      "metric_n": {
+        "overall_accuracy": 5,
+        "macro_precision": 5,
+        "macro_recall": 5,
+        "macro_f1": 5,
+        "mean_iou": 5
+      }
+    },
+    "adjacency": {
+      "seeds_found": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "seeds_missing": [],
+      "selected_epochs": [
+        29,
+        33,
+        35,
+        36
+      ],
+      "stopping_reasons": [
+        "early_stop"
+      ],
+      "overall_accuracy_mean": 0.9569398334207001,
+      "overall_accuracy_std": 0.002101912767228794,
+      "macro_precision_mean": 0.9186793729857398,
+      "macro_recall_mean": 0.9132357482904535,
+      "macro_f1_mean": 0.914771656513938,
+      "macro_f1_std": 0.003949995959098071,
+      "mean_iou_mean": 0.856880436396999,
+      "n_samples": [
+        34338
+      ],
+      "metric_n": {
+        "overall_accuracy": 5,
+        "macro_precision": 5,
+        "macro_recall": 5,
+        "macro_f1": 5,
+        "mean_iou": 5
+      }
+    },
+    "both": {
+      "seeds_found": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "seeds_missing": [],
+      "selected_epochs": [
+        32,
+        35,
+        36,
+        42
+      ],
+      "stopping_reasons": [
+        "early_stop"
+      ],
+      "overall_accuracy_mean": 0.9581979148465257,
+      "overall_accuracy_std": 0.001311083800964848,
+      "macro_precision_mean": 0.9202596168433612,
+      "macro_recall_mean": 0.9163523324250923,
+      "macro_f1_mean": 0.9171766514414169,
+      "macro_f1_std": 0.003685100352011731,
+      "mean_iou_mean": 0.8605047136913229,
+      "n_samples": [
+        34338
+      ],
+      "metric_n": {
+        "overall_accuracy": 5,
+        "macro_precision": 5,
+        "macro_recall": 5,
+        "macro_f1": 5,
+        "mean_iou": 5
+      }
+    },
+    "shuffled": {
+      "seeds_found": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "seeds_missing": [],
+      "selected_epochs": [
+        40,
+        42,
+        45,
+        47
+      ],
+      "stopping_reasons": [
+        "early_stop"
+      ],
+      "overall_accuracy_mean": 0.9198846758692993,
+      "overall_accuracy_std": 0.0034350067307605168,
+      "macro_precision_mean": 0.8640505364905023,
+      "macro_recall_mean": 0.8407234037368206,
+      "macro_f1_mean": 0.849057392216665,
+      "macro_f1_std": 0.007068939472985449,
+      "mean_iou_mean": 0.7569790163833053,
+      "n_samples": [
+        34338
+      ],
+      "metric_n": {
+        "overall_accuracy": 5,
+        "macro_precision": 5,
+        "macro_recall": 5,
+        "macro_f1": 5,
+        "mean_iou": 5
+      }
+    }
+  }
+}
